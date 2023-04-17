@@ -8,6 +8,7 @@ import (
 	"github.com/hashicorp/terraform-provider-azurerm/internal/common"
 	"github.com/hashicorp/terraform-provider-azurerm/internal/features"
 	keyvault "github.com/hashicorp/terraform-provider-azurerm/internal/services/keyvault/client"
+	managementgroup "github.com/hashicorp/terraform-provider-azurerm/internal/services/managementgroup/client"
 	network "github.com/hashicorp/terraform-provider-azurerm/internal/services/network/client"
 	resource "github.com/hashicorp/terraform-provider-azurerm/internal/services/resource/client"
 	storage "github.com/hashicorp/terraform-provider-azurerm/internal/services/storage/client"
@@ -22,10 +23,11 @@ type Client struct {
 	Account  *ResourceManagerAccount
 	Features features.UserFeatures
 
-	KeyVault *keyvault.Client
-	Network  *network.Client
-	Resource *resource.Client
-	Storage  *storage.Client
+	KeyVault         *keyvault.Client
+	ManagementGroups *managementgroup.Client
+	Network          *network.Client
+	Resource         *resource.Client
+	Storage          *storage.Client
 }
 
 // NOTE: it should be possible for this method to become Private once the top level Client's removed
@@ -43,6 +45,7 @@ func (client *Client) Build(ctx context.Context, o *common.ClientOptions) error 
 	client.StopContext = ctx
 
 	client.KeyVault = keyvault.NewClient(o)
+	client.ManagementGroups = managementgroup.NewClient(o)
 	client.Network = network.NewClient(o)
 	client.Storage = storage.NewClient(o)
 
