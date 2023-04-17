@@ -10,12 +10,8 @@ import (
 
 	"github.com/hashicorp/go-azure-helpers/resourcemanager/commonschema"
 	"github.com/hashicorp/go-azure-helpers/resourcemanager/location"
-	"github.com/hashicorp/terraform-provider-azurerm/helpers/azure"
-	"github.com/hashicorp/terraform-provider-azurerm/helpers/tf"
 	"github.com/hashicorp/terraform-provider-azurerm/internal/clients"
-	"github.com/hashicorp/terraform-provider-azurerm/internal/locks"
 	"github.com/hashicorp/terraform-provider-azurerm/internal/services/network/parse"
-	"github.com/hashicorp/terraform-provider-azurerm/internal/services/network/validate"
 	"github.com/hashicorp/terraform-provider-azurerm/internal/tags"
 	"github.com/hashicorp/terraform-provider-azurerm/internal/tf/pluginsdk"
 	"github.com/hashicorp/terraform-provider-azurerm/internal/tf/validation"
@@ -28,10 +24,7 @@ var VirtualNetworkResourceName = "azurerm_virtual_network"
 
 func resourceVirtualNetwork() *pluginsdk.Resource {
 	return &pluginsdk.Resource{
-		Create: resourceVirtualNetworkCreateUpdate,
-		Read:   resourceVirtualNetworkRead,
-		Update: resourceVirtualNetworkCreateUpdate,
-		Delete: resourceVirtualNetworkDelete,
+		Read: resourceVirtualNetworkRead,
 		Importer: pluginsdk.ImporterValidatingResourceId(func(id string) error {
 			_, err := parse.VirtualNetworkID(id)
 			return err
@@ -72,31 +65,6 @@ func resourceVirtualNetworkSchema() map[string]*pluginsdk.Schema {
 		},
 
 		// Optional
-		"bgp_community": {
-			Type:         pluginsdk.TypeString,
-			Optional:     true,
-			ValidateFunc: validate.VirtualNetworkBgpCommunity,
-		},
-
-		"ddos_protection_plan": {
-			Type:     pluginsdk.TypeList,
-			Optional: true,
-			MaxItems: 1,
-			Elem: &pluginsdk.Resource{
-				Schema: map[string]*pluginsdk.Schema{
-					"id": {
-						Type:         pluginsdk.TypeString,
-						Required:     true,
-						ValidateFunc: validate.DdosProtectionPlanID,
-					},
-
-					"enable": {
-						Type:     pluginsdk.TypeBool,
-						Required: true,
-					},
-				},
-			},
-		},
 
 		"dns_servers": {
 			Type:     pluginsdk.TypeList,
@@ -158,89 +126,6 @@ func resourceVirtualNetworkSchema() map[string]*pluginsdk.Schema {
 	}
 }
 
-func resourceVirtualNetworkCreateUpdate(d *pluginsdk.ResourceData, meta interface{}) error {
-	client := meta.(*clients.Client).Network.VnetClient
-	subscriptionId := meta.(*clients.Client).Account.SubscriptionId
-	ctx, cancel := timeouts.ForCreateUpdate(meta.(*clients.Client).StopContext, d)
-	defer cancel()
-
-	id := parse.NewVirtualNetworkID(subscriptionId, d.Get("resource_group_name").(string), d.Get("name").(string))
-	if d.IsNewResource() {
-		existing, err := client.Get(ctx, id.ResourceGroup, id.Name, "")
-		if err != nil {
-			if !utils.ResponseWasNotFound(existing.Response) {
-				return fmt.Errorf("checking for presence of existing %s: %s", id, err)
-			}
-		}
-
-		if !utils.ResponseWasNotFound(existing.Response) {
-			return tf.ImportAsExistsError("azurerm_virtual_network", id.ID())
-		}
-	}
-
-	location := azure.NormalizeLocation(d.Get("location").(string))
-	t := d.Get("tags").(map[string]interface{})
-
-	vnetProperties, err := expandVirtualNetworkProperties(ctx, d, meta)
-	if err != nil {
-		return err
-	}
-
-	vnet := network.VirtualNetwork{
-		Name:                           utils.String(id.Name),
-		ExtendedLocation:               expandEdgeZone(d.Get("edge_zone").(string)),
-		Location:                       utils.String(location),
-		VirtualNetworkPropertiesFormat: vnetProperties,
-		Tags:                           tags.Expand(t),
-	}
-
-	if v, ok := d.GetOk("flow_timeout_in_minutes"); ok {
-		vnet.VirtualNetworkPropertiesFormat.FlowTimeoutInMinutes = utils.Int32(int32(v.(int)))
-	}
-
-	networkSecurityGroupNames := make([]string, 0)
-	for _, subnet := range *vnet.VirtualNetworkPropertiesFormat.Subnets {
-		if subnet.NetworkSecurityGroup != nil {
-			parsedNsgID, err := parse.NetworkSecurityGroupID(*subnet.NetworkSecurityGroup.ID)
-			if err != nil {
-				return err
-			}
-
-			networkSecurityGroupName := parsedNsgID.Name
-			if !utils.SliceContainsValue(networkSecurityGroupNames, networkSecurityGroupName) {
-				networkSecurityGroupNames = append(networkSecurityGroupNames, networkSecurityGroupName)
-			}
-		}
-	}
-
-	locks.MultipleByName(&networkSecurityGroupNames, networkSecurityGroupResourceName)
-	defer locks.UnlockMultipleByName(&networkSecurityGroupNames, networkSecurityGroupResourceName)
-
-	future, err := client.CreateOrUpdate(ctx, id.ResourceGroup, id.Name, vnet)
-	if err != nil {
-		return fmt.Errorf("creating/updating %s: %+v", id, err)
-	}
-
-	if err = future.WaitForCompletionRef(ctx, client.Client); err != nil {
-		return fmt.Errorf("waiting for creation/update of %s: %+v", id, err)
-	}
-
-	timeout, _ := ctx.Deadline()
-	stateConf := &pluginsdk.StateChangeConf{
-		Pending:    []string{string(network.ProvisioningStateUpdating)},
-		Target:     []string{string(network.ProvisioningStateSucceeded)},
-		Refresh:    VirtualNetworkProvisioningStateRefreshFunc(ctx, client, id),
-		MinTimeout: 1 * time.Minute,
-		Timeout:    time.Until(timeout),
-	}
-	if _, err = stateConf.WaitForStateContext(ctx); err != nil {
-		return fmt.Errorf("waiting for provisioning state of %s: %+v", id, err)
-	}
-
-	d.SetId(id.ID())
-	return resourceVirtualNetworkRead(d, meta)
-}
-
 func resourceVirtualNetworkRead(d *pluginsdk.ResourceData, meta interface{}) error {
 	client := meta.(*clients.Client).Network.VnetClient
 	ctx, cancel := timeouts.ForRead(meta.(*clients.Client).StopContext, d)
@@ -298,36 +183,6 @@ func resourceVirtualNetworkRead(d *pluginsdk.ResourceData, meta interface{}) err
 	}
 
 	return tags.FlattenAndSet(d, resp.Tags)
-}
-
-func resourceVirtualNetworkDelete(d *pluginsdk.ResourceData, meta interface{}) error {
-	client := meta.(*clients.Client).Network.VnetClient
-	ctx, cancel := timeouts.ForDelete(meta.(*clients.Client).StopContext, d)
-	defer cancel()
-
-	id, err := parse.VirtualNetworkID(d.Id())
-	if err != nil {
-		return err
-	}
-
-	nsgNames, err := expandAzureRmVirtualNetworkVirtualNetworkSecurityGroupNames(d)
-	if err != nil {
-		return fmt.Errorf("parsing Network Security Group ID's: %+v", err)
-	}
-
-	locks.MultipleByName(&nsgNames, VirtualNetworkResourceName)
-	defer locks.UnlockMultipleByName(&nsgNames, VirtualNetworkResourceName)
-
-	future, err := client.Delete(ctx, id.ResourceGroup, id.Name)
-	if err != nil {
-		return fmt.Errorf("deleting %s: %+v", *id, err)
-	}
-
-	if err = future.WaitForCompletionRef(ctx, client.Client); err != nil {
-		return fmt.Errorf("waiting for deletion of %s: %+v", *id, err)
-	}
-
-	return nil
 }
 
 func expandVirtualNetworkProperties(ctx context.Context, d *pluginsdk.ResourceData, meta interface{}) (*network.VirtualNetworkPropertiesFormat, error) {
@@ -503,35 +358,6 @@ func getExistingSubnet(ctx context.Context, resGroup string, vnetName string, su
 
 	// Return it directly rather than copy the fields to prevent potential uncovered properties (for example, `ServiceEndpoints` mentioned in #1619)
 	return &resp, nil
-}
-
-func expandAzureRmVirtualNetworkVirtualNetworkSecurityGroupNames(d *pluginsdk.ResourceData) ([]string, error) {
-	nsgNames := make([]string, 0)
-
-	if v, ok := d.GetOk("subnet"); ok {
-		subnets := v.(*pluginsdk.Set).List()
-		for _, subnet := range subnets {
-			subnet, ok := subnet.(map[string]interface{})
-			if !ok {
-				return nil, fmt.Errorf("[ERROR] Subnet should be a Hash - was '%+v'", subnet)
-			}
-
-			networkSecurityGroupId := subnet["security_group"].(string)
-			if networkSecurityGroupId != "" {
-				parsedNsgID, err := parse.NetworkSecurityGroupID(networkSecurityGroupId)
-				if err != nil {
-					return nil, err
-				}
-
-				networkSecurityGroupName := parsedNsgID.Name
-				if !utils.SliceContainsValue(nsgNames, networkSecurityGroupName) {
-					nsgNames = append(nsgNames, networkSecurityGroupName)
-				}
-			}
-		}
-	}
-
-	return nsgNames, nil
 }
 
 func VirtualNetworkProvisioningStateRefreshFunc(ctx context.Context, client *network.VirtualNetworksClient, id parse.VirtualNetworkId) pluginsdk.StateRefreshFunc {

@@ -10,8 +10,8 @@ import (
 	"github.com/hashicorp/go-azure-helpers/lang/response"
 	"github.com/hashicorp/go-azure-sdk/resource-manager/storage/2022-05-01/localusers"
 	"github.com/hashicorp/terraform-provider-azurerm/internal/sdk"
-	"github.com/hashicorp/terraform-provider-azurerm/internal/services/compute"
-	computevalidate "github.com/hashicorp/terraform-provider-azurerm/internal/services/compute/validate"
+	//"github.com/hashicorp/terraform-provider-azurerm/internal/services/compute"
+	//computevalidate "github.com/hashicorp/terraform-provider-azurerm/internal/services/compute/validate"
 	"github.com/hashicorp/terraform-provider-azurerm/internal/services/storage/parse"
 	"github.com/hashicorp/terraform-provider-azurerm/internal/services/storage/validate"
 	"github.com/hashicorp/terraform-provider-azurerm/internal/tf/pluginsdk"
@@ -81,25 +81,25 @@ func (r LocalUserResource) Arguments() map[string]*pluginsdk.Schema {
 			Type:     pluginsdk.TypeString,
 			Optional: true,
 		},
-		"ssh_authorized_key": {
-			Type:         pluginsdk.TypeList,
-			Optional:     true,
-			RequiredWith: []string{"ssh_key_enabled"},
-			Elem: &pluginsdk.Resource{
-				Schema: map[string]*pluginsdk.Schema{
-					"key": {
-						Type:             pluginsdk.TypeString,
-						Required:         true,
-						ValidateFunc:     computevalidate.SSHKey,
-						DiffSuppressFunc: compute.SSHKeyDiffSuppress,
-					},
-					"description": {
-						Type:     pluginsdk.TypeString,
-						Optional: true,
-					},
-				},
-			},
-		},
+		//"ssh_authorized_key": {
+		//	Type:         pluginsdk.TypeList,
+		//	Optional:     true,
+		//	RequiredWith: []string{"ssh_key_enabled"},
+		//	Elem: &pluginsdk.Resource{
+		//		Schema: map[string]*pluginsdk.Schema{
+		//			"key": {
+		//				Type:             pluginsdk.TypeString,
+		//				Required:         true,
+		//				ValidateFunc:     computevalidate.SSHKey,
+		//				DiffSuppressFunc: compute.SSHKeyDiffSuppress,
+		//			},
+		//			"description": {
+		//				Type:     pluginsdk.TypeString,
+		//				Optional: true,
+		//			},
+		//		},
+		//	},
+		//},
 		"permission_scope": {
 			Type:     pluginsdk.TypeList,
 			Optional: true,
