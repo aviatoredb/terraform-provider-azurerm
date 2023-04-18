@@ -4,11 +4,8 @@ package provider
 
 import (
 	"github.com/hashicorp/terraform-provider-azurerm/internal/sdk"
-	"github.com/hashicorp/terraform-provider-azurerm/internal/services/managedidentity"
 )
 
 func autoRegisteredTypedServices() []sdk.TypedServiceRegistration {
-	return []sdk.TypedServiceRegistration{
-		managedidentity.Registration{},
-	}
+	return []sdk.TypedServiceRegistration{}
 }

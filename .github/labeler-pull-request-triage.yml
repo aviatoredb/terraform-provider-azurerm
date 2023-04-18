@@ -7,8 +7,5 @@ documentation:
   - website/**/*
 tooling:
   - internal/tools/**/*
-service/authorization:
-  - internal/services/managedidentity/**/*
-
 service/key-vault:
   - internal/services/keyvault/**/*

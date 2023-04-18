@@ -204,10 +204,10 @@ ok  	github.com/hashicorp/terraform-provider-azurerm/helpers/validate	(cached)
 ?   	github.com/hashicorp/terraform-provider-azurerm/internal/acceptance/check	[no test files]
 ?   	github.com/hashicorp/terraform-provider-azurerm/internal/acceptance/testclient	[no test files]
 ?   	github.com/hashicorp/terraform-provider-azurerm/internal/acceptance/types	[no test files]
-?   	github.com/hashicorp/terraform-provider-azurerm/internal/acceptance/ssh	[no test files]
-?   	github.com/hashicorp/terraform-provider-azurerm/internal/acceptance/helpers	[no test files]
 ?   	github.com/hashicorp/terraform-provider-azurerm/internal/clients	[no test files]
 ?   	github.com/hashicorp/terraform-provider-azurerm/internal/clients/graph	[no test files]
+?   	github.com/hashicorp/terraform-provider-azurerm/internal/acceptance/helpers	[no test files]
+?   	github.com/hashicorp/terraform-provider-azurerm/internal/acceptance/ssh	[no test files]
 === RUN   TestAccAzureRMTestDataRandomIntOfLength
 --- PASS: TestAccAzureRMTestDataRandomIntOfLength (0.00s)
 === RUN   TestAccRandTimeInt
@@ -218,7 +218,7 @@ ok  	github.com/hashicorp/terraform-provider-azurerm/helpers/validate	(cached)
     testing.go:53: Acceptance test skipped unless env 'TF_ACC' set
 --- SKIP: TestAccEnsureRequiredResourceProvidersAreRegistered (0.00s)
 PASS
-ok  	github.com/hashicorp/terraform-provider-azurerm/internal/acceptance	0.804s
+ok  	github.com/hashicorp/terraform-provider-azurerm/internal/acceptance	0.510s
 === RUN   TestCorrelationRequestID
 2023/04/17 15:19:54 [DEBUG] Generated Provider Correlation Request Id: 4b684151-f18e-7435-e904-939c608c01b7
 --- PASS: TestCorrelationRequestID (0.00s)
@@ -280,82 +280,79 @@ ok  	github.com/hashicorp/terraform-provider-azurerm/internal/locks	(cached)
 === RUN   TestProvider
 --- PASS: TestProvider (0.00s)
 === RUN   TestDataSourcesSupportCustomTimeouts
-=== RUN   TestDataSourcesSupportCustomTimeouts/DataSource/azurerm_key_vault_secrets
-    provider_test.go:30: [DEBUG] Testing Data Source "azurerm_key_vault_secrets"..
-=== RUN   TestDataSourcesSupportCustomTimeouts/DataSource/azurerm_key_vault_access_policy
-    provider_test.go:30: [DEBUG] Testing Data Source "azurerm_key_vault_access_policy"..
-=== RUN   TestDataSourcesSupportCustomTimeouts/DataSource/azurerm_key_vault_certificate_issuer
-    provider_test.go:30: [DEBUG] Testing Data Source "azurerm_key_vault_certificate_issuer"..
-=== RUN   TestDataSourcesSupportCustomTimeouts/DataSource/azurerm_key_vault_managed_hardware_security_module
-    provider_test.go:30: [DEBUG] Testing Data Source "azurerm_key_vault_managed_hardware_security_module"..
-=== RUN   TestDataSourcesSupportCustomTimeouts/DataSource/azurerm_key_vault_secret
-    provider_test.go:30: [DEBUG] Testing Data Source "azurerm_key_vault_secret"..
-=== RUN   TestDataSourcesSupportCustomTimeouts/DataSource/azurerm_key_vault_certificate_data
-    provider_test.go:30: [DEBUG] Testing Data Source "azurerm_key_vault_certificate_data"..
-=== RUN   TestDataSourcesSupportCustomTimeouts/DataSource/azurerm_key_vault_encrypted_value
-    provider_test.go:30: [DEBUG] Testing Data Source "azurerm_key_vault_encrypted_value"..
-=== RUN   TestDataSourcesSupportCustomTimeouts/DataSource/azurerm_key_vault_certificate
-    provider_test.go:30: [DEBUG] Testing Data Source "azurerm_key_vault_certificate"..
-=== RUN   TestDataSourcesSupportCustomTimeouts/DataSource/customkv_key_vault
-    provider_test.go:30: [DEBUG] Testing Data Source "customkv_key_vault"..
 === RUN   TestDataSourcesSupportCustomTimeouts/DataSource/azurerm_key_vault_key
     provider_test.go:30: [DEBUG] Testing Data Source "azurerm_key_vault_key"..
+=== RUN   TestDataSourcesSupportCustomTimeouts/DataSource/azurerm_key_vault_secret
+    provider_test.go:30: [DEBUG] Testing Data Source "azurerm_key_vault_secret"..
 === RUN   TestDataSourcesSupportCustomTimeouts/DataSource/azurerm_key_vault_certificates
     provider_test.go:30: [DEBUG] Testing Data Source "azurerm_key_vault_certificates"..
+=== RUN   TestDataSourcesSupportCustomTimeouts/DataSource/azurerm_key_vault_encrypted_value
+    provider_test.go:30: [DEBUG] Testing Data Source "azurerm_key_vault_encrypted_value"..
+=== RUN   TestDataSourcesSupportCustomTimeouts/DataSource/azurerm_key_vault_managed_hardware_security_module
+    provider_test.go:30: [DEBUG] Testing Data Source "azurerm_key_vault_managed_hardware_security_module"..
+=== RUN   TestDataSourcesSupportCustomTimeouts/DataSource/azurerm_key_vault_secrets
+    provider_test.go:30: [DEBUG] Testing Data Source "azurerm_key_vault_secrets"..
+=== RUN   TestDataSourcesSupportCustomTimeouts/DataSource/customkv_key_vault
+    provider_test.go:30: [DEBUG] Testing Data Source "customkv_key_vault"..
+=== RUN   TestDataSourcesSupportCustomTimeouts/DataSource/azurerm_key_vault_certificate_data
+    provider_test.go:30: [DEBUG] Testing Data Source "azurerm_key_vault_certificate_data"..
+=== RUN   TestDataSourcesSupportCustomTimeouts/DataSource/azurerm_key_vault_certificate_issuer
+    provider_test.go:30: [DEBUG] Testing Data Source "azurerm_key_vault_certificate_issuer"..
+=== RUN   TestDataSourcesSupportCustomTimeouts/DataSource/azurerm_key_vault_access_policy
+    provider_test.go:30: [DEBUG] Testing Data Source "azurerm_key_vault_access_policy"..
+=== RUN   TestDataSourcesSupportCustomTimeouts/DataSource/azurerm_key_vault_certificate
+    provider_test.go:30: [DEBUG] Testing Data Source "azurerm_key_vault_certificate"..
 --- PASS: TestDataSourcesSupportCustomTimeouts (0.00s)
-    --- PASS: TestDataSourcesSupportCustomTimeouts/DataSource/azurerm_key_vault_secrets (0.00s)
-    --- PASS: TestDataSourcesSupportCustomTimeouts/DataSource/azurerm_key_vault_access_policy (0.00s)
-    --- PASS: TestDataSourcesSupportCustomTimeouts/DataSource/azurerm_key_vault_certificate_issuer (0.00s)
-    --- PASS: TestDataSourcesSupportCustomTimeouts/DataSource/azurerm_key_vault_managed_hardware_security_module (0.00s)
-    --- PASS: TestDataSourcesSupportCustomTimeouts/DataSource/azurerm_key_vault_secret (0.00s)
-    --- PASS: TestDataSourcesSupportCustomTimeouts/DataSource/azurerm_key_vault_certificate_data (0.00s)
-    --- PASS: TestDataSourcesSupportCustomTimeouts/DataSource/azurerm_key_vault_encrypted_value (0.00s)
-    --- PASS: TestDataSourcesSupportCustomTimeouts/DataSource/azurerm_key_vault_certificate (0.00s)
-    --- PASS: TestDataSourcesSupportCustomTimeouts/DataSource/customkv_key_vault (0.00s)
     --- PASS: TestDataSourcesSupportCustomTimeouts/DataSource/azurerm_key_vault_key (0.00s)
+    --- PASS: TestDataSourcesSupportCustomTimeouts/DataSource/azurerm_key_vault_secret (0.00s)
     --- PASS: TestDataSourcesSupportCustomTimeouts/DataSource/azurerm_key_vault_certificates (0.00s)
+    --- PASS: TestDataSourcesSupportCustomTimeouts/DataSource/azurerm_key_vault_encrypted_value (0.00s)
+    --- PASS: TestDataSourcesSupportCustomTimeouts/DataSource/azurerm_key_vault_managed_hardware_security_module (0.00s)
+    --- PASS: TestDataSourcesSupportCustomTimeouts/DataSource/azurerm_key_vault_secrets (0.00s)
+    --- PASS: TestDataSourcesSupportCustomTimeouts/DataSource/customkv_key_vault (0.00s)
+    --- PASS: TestDataSourcesSupportCustomTimeouts/DataSource/azurerm_key_vault_certificate_data (0.00s)
+    --- PASS: TestDataSourcesSupportCustomTimeouts/DataSource/azurerm_key_vault_certificate_issuer (0.00s)
+    --- PASS: TestDataSourcesSupportCustomTimeouts/DataSource/azurerm_key_vault_access_policy (0.00s)
+    --- PASS: TestDataSourcesSupportCustomTimeouts/DataSource/azurerm_key_vault_certificate (0.00s)
 === RUN   TestResourcesSupportCustomTimeouts
-=== RUN   TestResourcesSupportCustomTimeouts/Resource/azurerm_key_vault_certificate_contacts
-    provider_test.go:66: [DEBUG] Testing Resource "azurerm_key_vault_certificate_contacts"..
-=== RUN   TestResourcesSupportCustomTimeouts/Resource/azurerm_user_assigned_identity
-    provider_test.go:66: [DEBUG] Testing Resource "azurerm_user_assigned_identity"..
 === RUN   TestResourcesSupportCustomTimeouts/Resource/azurerm_key_vault_managed_storage_account
     provider_test.go:66: [DEBUG] Testing Resource "azurerm_key_vault_managed_storage_account"..
-=== RUN   TestResourcesSupportCustomTimeouts/Resource/azurerm_key_vault_certificate_issuer
-    provider_test.go:66: [DEBUG] Testing Resource "azurerm_key_vault_certificate_issuer"..
-=== RUN   TestResourcesSupportCustomTimeouts/Resource/azurerm_key_vault_access_policy
-    provider_test.go:66: [DEBUG] Testing Resource "azurerm_key_vault_access_policy"..
-=== RUN   TestResourcesSupportCustomTimeouts/Resource/azurerm_key_vault_key
-    provider_test.go:66: [DEBUG] Testing Resource "azurerm_key_vault_key"..
+=== RUN   TestResourcesSupportCustomTimeouts/Resource/azurerm_key_vault_managed_storage_account_sas_token_definition
+    provider_test.go:66: [DEBUG] Testing Resource "azurerm_key_vault_managed_storage_account_sas_token_definition"..
 === RUN   TestResourcesSupportCustomTimeouts/Resource/azurerm_key_vault_managed_hardware_security_module
     provider_test.go:66: [DEBUG] Testing Resource "azurerm_key_vault_managed_hardware_security_module"..
 === RUN   TestResourcesSupportCustomTimeouts/Resource/azurerm_key_vault_secret
     provider_test.go:66: [DEBUG] Testing Resource "azurerm_key_vault_secret"..
-=== RUN   TestResourcesSupportCustomTimeouts/Resource/customkv_key_vault
-    provider_test.go:66: [DEBUG] Testing Resource "customkv_key_vault"..
+=== RUN   TestResourcesSupportCustomTimeouts/Resource/azurerm_key_vault_key
+    provider_test.go:66: [DEBUG] Testing Resource "azurerm_key_vault_key"..
+=== RUN   TestResourcesSupportCustomTimeouts/Resource/azurerm_key_vault_access_policy
+    provider_test.go:66: [DEBUG] Testing Resource "azurerm_key_vault_access_policy"..
 === RUN   TestResourcesSupportCustomTimeouts/Resource/azurerm_key_vault_certificate
     provider_test.go:66: [DEBUG] Testing Resource "azurerm_key_vault_certificate"..
-=== RUN   TestResourcesSupportCustomTimeouts/Resource/azurerm_key_vault_managed_storage_account_sas_token_definition
-    provider_test.go:66: [DEBUG] Testing Resource "azurerm_key_vault_managed_storage_account_sas_token_definition"..
+=== RUN   TestResourcesSupportCustomTimeouts/Resource/azurerm_key_vault_certificate_contacts
+    provider_test.go:66: [DEBUG] Testing Resource "azurerm_key_vault_certificate_contacts"..
+=== RUN   TestResourcesSupportCustomTimeouts/Resource/customkv_key_vault
+    provider_test.go:66: [DEBUG] Testing Resource "customkv_key_vault"..
+=== RUN   TestResourcesSupportCustomTimeouts/Resource/azurerm_key_vault_certificate_issuer
+    provider_test.go:66: [DEBUG] Testing Resource "azurerm_key_vault_certificate_issuer"..
 --- PASS: TestResourcesSupportCustomTimeouts (0.00s)
-    --- PASS: TestResourcesSupportCustomTimeouts/Resource/azurerm_key_vault_certificate_contacts (0.00s)
-    --- PASS: TestResourcesSupportCustomTimeouts/Resource/azurerm_user_assigned_identity (0.00s)
     --- PASS: TestResourcesSupportCustomTimeouts/Resource/azurerm_key_vault_managed_storage_account (0.00s)
-    --- PASS: TestResourcesSupportCustomTimeouts/Resource/azurerm_key_vault_certificate_issuer (0.00s)
-    --- PASS: TestResourcesSupportCustomTimeouts/Resource/azurerm_key_vault_access_policy (0.00s)
-    --- PASS: TestResourcesSupportCustomTimeouts/Resource/azurerm_key_vault_key (0.00s)
+    --- PASS: TestResourcesSupportCustomTimeouts/Resource/azurerm_key_vault_managed_storage_account_sas_token_definition (0.00s)
     --- PASS: TestResourcesSupportCustomTimeouts/Resource/azurerm_key_vault_managed_hardware_security_module (0.00s)
     --- PASS: TestResourcesSupportCustomTimeouts/Resource/azurerm_key_vault_secret (0.00s)
-    --- PASS: TestResourcesSupportCustomTimeouts/Resource/customkv_key_vault (0.00s)
+    --- PASS: TestResourcesSupportCustomTimeouts/Resource/azurerm_key_vault_key (0.00s)
+    --- PASS: TestResourcesSupportCustomTimeouts/Resource/azurerm_key_vault_access_policy (0.00s)
     --- PASS: TestResourcesSupportCustomTimeouts/Resource/azurerm_key_vault_certificate (0.00s)
-    --- PASS: TestResourcesSupportCustomTimeouts/Resource/azurerm_key_vault_managed_storage_account_sas_token_definition (0.00s)
+    --- PASS: TestResourcesSupportCustomTimeouts/Resource/azurerm_key_vault_certificate_contacts (0.00s)
+    --- PASS: TestResourcesSupportCustomTimeouts/Resource/customkv_key_vault (0.00s)
+    --- PASS: TestResourcesSupportCustomTimeouts/Resource/azurerm_key_vault_certificate_issuer (0.00s)
 === RUN   TestProvider_impl
 --- PASS: TestProvider_impl (0.00s)
 === RUN   TestProvider_counts
-2023/04/18 13:14:46 Data Sources: 11
-2023/04/18 13:14:46 Resources:    11
-2023/04/18 13:14:46 -----------------
-2023/04/18 13:14:46 Total:        22
+2023/04/18 13:57:25 Data Sources: 11
+2023/04/18 13:57:25 Resources:    10
+2023/04/18 13:57:25 -----------------
+2023/04/18 13:57:25 Total:        21
 --- PASS: TestProvider_counts (0.00s)
 === RUN   TestAccProvider_cliAuth
     provider_test.go:123: TF_ACC not set
@@ -375,24 +372,19 @@ ok  	github.com/hashicorp/terraform-provider-azurerm/internal/locks	(cached)
 === RUN   TestTypedDataSourcesContainValidModelObjects
     services_test.go:11: Service "KeyVault"..
     services_test.go:13: - DataSources "azurerm_key_vault_encrypted_value"..
-    services_test.go:11: Service "ManagedIdentity"..
 --- PASS: TestTypedDataSourcesContainValidModelObjects (0.00s)
 === RUN   TestTypedResourcesContainValidModelObjects
     services_test.go:24: Service "KeyVault"..
     services_test.go:26: - Resource "azurerm_key_vault_certificate_contacts"..
-    services_test.go:24: Service "ManagedIdentity"..
-    services_test.go:26: - Resource "azurerm_user_assigned_identity"..
 --- PASS: TestTypedResourcesContainValidModelObjects (0.00s)
 === RUN   TestTypedResourcesContainValidIDParsers
     services_test.go:43: Service "KeyVault"..
     services_test.go:45: - Resource "azurerm_key_vault_certificate_contacts"..
-    services_test.go:43: Service "ManagedIdentity"..
-    services_test.go:45: - Resource "azurerm_user_assigned_identity"..
 --- PASS: TestTypedResourcesContainValidIDParsers (0.00s)
 === RUN   TestUntypedResourcesContainImporters
 --- PASS: TestUntypedResourcesContainImporters (0.00s)
 PASS
-ok  	github.com/hashicorp/terraform-provider-azurerm/internal/provider	0.122s
+ok  	github.com/hashicorp/terraform-provider-azurerm/internal/provider	0.093s
 === RUN   TestEnhancedValidationDisabled
     validation_test.go:38: Testing ""..
     validation_test.go:38: Testing "micr0soft"..
@@ -1049,6 +1041,7 @@ ok  	github.com/hashicorp/terraform-provider-azurerm/internal/sdk	(cached)
 ?   	github.com/hashicorp/terraform-provider-azurerm/internal/services/keyvault/migration	[no test files]
 ?   	github.com/hashicorp/terraform-provider-azurerm/internal/services/managedidentity/client	[no test files]
 ?   	github.com/hashicorp/terraform-provider-azurerm/internal/services/managedidentity/migration	[no test files]
+?   	github.com/hashicorp/terraform-provider-azurerm/internal/services/managementgroup/client	[no test files]
 === RUN   TestAccEncryptedValueDataSource_encryptAndDecrypt
 === PAUSE TestAccEncryptedValueDataSource_encryptAndDecrypt
 === RUN   TestAccDataSourceKeyVaultAccessPolicy_key
@@ -1200,23 +1193,23 @@ ok  	github.com/hashicorp/terraform-provider-azurerm/internal/sdk	(cached)
 === RUN   TestAccKeyVaultKey_RotationPolicyUnauthorized
 === PAUSE TestAccKeyVaultKey_RotationPolicyUnauthorized
 === RUN   TestAccKeyVaultManagedHardwareSecurityModule
-=== RUN   TestAccKeyVaultManagedHardwareSecurityModule/data_source
-=== RUN   TestAccKeyVaultManagedHardwareSecurityModule/data_source/basic
-    testcase.go:117: Acceptance tests skipped unless env 'TF_ACC' set
 === RUN   TestAccKeyVaultManagedHardwareSecurityModule/resource
+=== RUN   TestAccKeyVaultManagedHardwareSecurityModule/resource/basic
+    testcase.go:117: Acceptance tests skipped unless env 'TF_ACC' set
 === RUN   TestAccKeyVaultManagedHardwareSecurityModule/resource/update
     testcase.go:117: Acceptance tests skipped unless env 'TF_ACC' set
 === RUN   TestAccKeyVaultManagedHardwareSecurityModule/resource/complete
     testcase.go:117: Acceptance tests skipped unless env 'TF_ACC' set
-=== RUN   TestAccKeyVaultManagedHardwareSecurityModule/resource/basic
+=== RUN   TestAccKeyVaultManagedHardwareSecurityModule/data_source
+=== RUN   TestAccKeyVaultManagedHardwareSecurityModule/data_source/basic
     testcase.go:117: Acceptance tests skipped unless env 'TF_ACC' set
 --- PASS: TestAccKeyVaultManagedHardwareSecurityModule (0.00s)
-    --- PASS: TestAccKeyVaultManagedHardwareSecurityModule/data_source (0.00s)
-        --- SKIP: TestAccKeyVaultManagedHardwareSecurityModule/data_source/basic (0.00s)
     --- PASS: TestAccKeyVaultManagedHardwareSecurityModule/resource (0.00s)
+        --- SKIP: TestAccKeyVaultManagedHardwareSecurityModule/resource/basic (0.00s)
         --- SKIP: TestAccKeyVaultManagedHardwareSecurityModule/resource/update (0.00s)
         --- SKIP: TestAccKeyVaultManagedHardwareSecurityModule/resource/complete (0.00s)
-        --- SKIP: TestAccKeyVaultManagedHardwareSecurityModule/resource/basic (0.00s)
+    --- PASS: TestAccKeyVaultManagedHardwareSecurityModule/data_source (0.00s)
+        --- SKIP: TestAccKeyVaultManagedHardwareSecurityModule/data_source/basic (0.00s)
 === RUN   TestAccKeyVaultManagedStorageAccountSasTokenDefinition_basic
 === PAUSE TestAccKeyVaultManagedStorageAccountSasTokenDefinition_basic
 === RUN   TestAccKeyVaultManagedStorageAccountSasTokenDefinition_requiresImport
@@ -1303,479 +1296,455 @@ ok  	github.com/hashicorp/terraform-provider-azurerm/internal/sdk	(cached)
 === PAUSE TestAccKeyVaultSecret_purge
 === RUN   TestAccDataSourceKeyVaultSecrets_basic
 === PAUSE TestAccDataSourceKeyVaultSecrets_basic
-=== CONT  TestAccEncryptedValueDataSource_encryptAndDecrypt
-=== CONT  TestAccKeyVaultSecret_requiresImport
-=== CONT  TestAccKeyVaultSecret_complete
-=== CONT  TestAccDataSourceKeyVault_networkAcls
-=== CONT  TestAccKeyVaultManagedStorageAccount_requiresImport
-=== CONT  TestAccKeyVault_updateContacts
-=== CONT  TestAccKeyVaultKey_disappearsWhenParentKeyVaultDeleted
-=== NAME  TestAccKeyVaultSecret_requiresImport
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVault_networkAclsAllowed
-=== CONT  TestAccDataSourceKeyVaultSecret_specifyVersion
---- SKIP: TestAccKeyVaultSecret_requiresImport (0.00s)
-=== CONT  TestAccDataSourceKeyVaultSecrets_basic
-=== NAME  TestAccKeyVaultSecret_complete
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
---- SKIP: TestAccKeyVaultSecret_complete (0.00s)
-=== CONT  TestAccKeyVault_basic
-=== NAME  TestAccKeyVaultManagedStorageAccount_requiresImport
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVaultSecret_purge
-=== CONT  TestAccKeyVaultSecret_withExternalAccessPolicy
-=== CONT  TestAccKeyVaultManagedStorageAccount_recovery
-=== CONT  TestAccKeyVaultSecret_recovery
-=== CONT  TestAccKeyVaultSecret_updatingValueChangedExternally
-=== CONT  TestAccKeyVaultSecret_disappears
-=== CONT  TestAccKeyVaultSecret_disappearsWhenParentKeyVaultDeleted
-=== CONT  TestAccKeyVaultManagedStorageAccount_basic
-=== CONT  TestAccKeyVaultSecret_update
-=== CONT  TestAccKeyVault_networkAcls
-=== CONT  TestAccKeyVault_requiresImport
---- SKIP: TestAccKeyVaultManagedStorageAccount_requiresImport (0.00s)
 === CONT  TestAccKeyVaultSecret_basic
-=== NAME  TestAccKeyVault_updateContacts
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== NAME  TestAccDataSourceKeyVaultSecret_specifyVersion
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVaultManagedStorageAccount_complete
---- SKIP: TestAccKeyVault_updateContacts (0.00s)
---- SKIP: TestAccDataSourceKeyVaultSecret_specifyVersion (0.00s)
-=== NAME  TestAccDataSourceKeyVaultSecrets_basic
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVaultManagedStorageAccount_update
-=== NAME  TestAccEncryptedValueDataSource_encryptAndDecrypt
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVaultManagedStorageAccountSasTokenDefinition_update
-=== NAME  TestAccKeyVaultManagedStorageAccount_recovery
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVaultManagedStorageAccountSasTokenDefinition_complete
-=== NAME  TestAccKeyVaultSecret_disappears
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== NAME  TestAccKeyVaultManagedStorageAccount_complete
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== NAME  TestAccKeyVault_networkAclsAllowed
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVaultManagedStorageAccountSasTokenDefinition_basic
-=== CONT  TestAccKeyVaultManagedStorageAccountSasTokenDefinition_recovery
-=== CONT  TestAccKeyVaultKey_RotationPolicyUnauthorized
-=== NAME  TestAccKeyVaultSecret_recovery
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVaultKey_RotationPolicyUpdate
-=== NAME  TestAccKeyVaultSecret_update
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVaultKey_RotationPolicyWithOnlyAutoRotation
-=== NAME  TestAccKeyVaultSecret_disappearsWhenParentKeyVaultDeleted
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVaultKey_RotationPolicyWithoutAutoRotation
-=== NAME  TestAccKeyVaultManagedStorageAccount_basic
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVaultKey_purge
-=== NAME  TestAccKeyVaultManagedStorageAccountSasTokenDefinition_recovery
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== NAME  TestAccKeyVaultManagedStorageAccount_update
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVaultKey_withExternalAccessPolicy
-=== CONT  TestAccKeyVaultKey_basicRSA
-=== NAME  TestAccKeyVaultSecret_purge
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVaultKey_disappears
-=== NAME  TestAccKeyVaultKey_RotationPolicyUpdate
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== NAME  TestAccKeyVaultSecret_withExternalAccessPolicy
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVaultKey_updatedExternally
-=== CONT  TestAccKeyVaultKey_update
-=== NAME  TestAccKeyVaultKey_disappearsWhenParentKeyVaultDeleted
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVaultKey_softDeleteRecovery
-=== NAME  TestAccKeyVaultManagedStorageAccountSasTokenDefinition_complete
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVaultKey_complete
-=== NAME  TestAccKeyVaultKey_RotationPolicyWithOnlyAutoRotation
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVaultKey_basicRSAHSM
-=== NAME  TestAccKeyVaultManagedStorageAccountSasTokenDefinition_basic
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVault_update
-=== NAME  TestAccKeyVaultKey_complete
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVault_upgradeSKU
-=== NAME  TestAccKeyVaultKey_basicRSA
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccDataSourceKeyVaultCertificateIssuer_basic
-=== NAME  TestAccKeyVaultKey_purge
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== NAME  TestAccKeyVaultKey_softDeleteRecovery
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccDataSourceKeyVault_complete
-=== CONT  TestAccDataSourceKeyVault_basic
-=== NAME  TestAccKeyVaultKey_update
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccDataSourceKeyVaultCertificates_basic
-=== NAME  TestAccKeyVault_networkAcls
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVaultCertificate_updatedImportedCertificate
-=== NAME  TestAccKeyVaultKey_RotationPolicyUnauthorized
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVaultCertificate_unorderedKeyUsage
-=== NAME  TestAccKeyVaultKey_withExternalAccessPolicy
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVaultCertificate_purge
-=== NAME  TestAccDataSourceKeyVaultCertificateIssuer_basic
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVaultCertificate_withExternalAccessPolicy
-=== NAME  TestAccKeyVaultCertificate_updatedImportedCertificate
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVaultCertificate_emptyExtendedKeyUsage
-=== NAME  TestAccKeyVault_update
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVaultCertificate_basicExtendedKeyUsage
-=== NAME  TestAccKeyVaultKey_RotationPolicyWithoutAutoRotation
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVaultCertificate_basicGenerateEllipticCurveAutoKeySize
-=== NAME  TestAccKeyVaultKey_basicRSAHSM
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== NAME  TestAccDataSourceKeyVault_basic
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== NAME  TestAccKeyVaultCertificate_emptyExtendedKeyUsage
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== NAME  TestAccDataSourceKeyVault_networkAcls
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVaultCertificate_basicGenerateSans
-=== NAME  TestAccKeyVault_basic
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== NAME  TestAccKeyVaultCertificate_purge
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVaultCertificate_softDeleteRecovery
-=== CONT  TestAccKeyVaultCertificate_basicGenerateTags
-=== CONT  TestAccKeyVaultCertificate_basicGenerateUnknownIssuer
-=== NAME  TestAccKeyVaultKey_updatedExternally
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVaultCertificate_updateTags
-=== NAME  TestAccKeyVault_upgradeSKU
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== NAME  TestAccKeyVaultCertificate_unorderedKeyUsage
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVaultCertificate_disappearsWhenParentKeyVaultDeleted
-=== CONT  TestAccKeyVaultCertificate_disappears
-=== NAME  TestAccKeyVault_requiresImport
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVaultCertificate_requiresImport
-=== NAME  TestAccDataSourceKeyVault_complete
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVaultCertificate_basicImportPFX
-=== NAME  TestAccDataSourceKeyVaultCertificates_basic
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVaultCertificateIssuer_disappears
-=== NAME  TestAccKeyVaultCertificate_disappears
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVaultCertificateIssuer_update
-=== NAME  TestAccKeyVaultCertificate_updateTags
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVaultCertificateIssuer_complete
-=== NAME  TestAccKeyVaultCertificate_basicGenerateSans
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== NAME  TestAccKeyVaultCertificate_basicGenerateEllipticCurveAutoKeySize
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVaultCertificateIssuer_requiresImport
-=== CONT  TestAccKeyVaultCertificateIssuer_basic
-=== NAME  TestAccKeyVaultCertificate_basicExtendedKeyUsage
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== NAME  TestAccKeyVaultCertificate_disappearsWhenParentKeyVaultDeleted
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVaultKey_requiresImport
-=== CONT  TestAccKeyVaultKey_curveEC
-=== NAME  TestAccKeyVaultCertificate_basicGenerateUnknownIssuer
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVaultKey_basicECHSM
-=== NAME  TestAccKeyVaultCertificateIssuer_update
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccDataSourceKeyVaultKey_complete
-=== CONT  TestAccKeyVaultCertificate_basicGenerateEllipticCurve
-=== NAME  TestAccKeyVaultKey_curveEC
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVaultKey_basicEC
-=== NAME  TestAccKeyVaultCertificateIssuer_disappears
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== NAME  TestAccKeyVaultCertificateIssuer_basic
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccDataSourceKeyVault_update
-=== CONT  TestAccKeyVault_purgeProtectionAndSoftDeleteEnabled
-=== NAME  TestAccKeyVaultCertificate_basicGenerateTags
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccDataSourceKeyVaultSecret_complete
-=== NAME  TestAccKeyVaultKey_basicECHSM
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== NAME  TestAccKeyVaultKey_basicEC
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
 === CONT  TestAccKeyVault_disappears
-=== CONT  TestAccKeyVault_complete
-=== NAME  TestAccKeyVaultCertificateIssuer_complete
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccDataSourceKeyVaultSecret_basic
-=== NAME  TestAccKeyVaultCertificateIssuer_requiresImport
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVault_deletePolicy
-=== NAME  TestAccDataSourceKeyVaultSecret_complete
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVault_accessPolicyUpperLimit
-=== NAME  TestAccKeyVaultCertificate_basicImportPFX
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVaultCertificateContacts_requiresImport
-=== NAME  TestAccKeyVaultManagedStorageAccountSasTokenDefinition_update
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVault_purgeProtectionAttemptToDisable
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVault_purgeProtectionViaUpdate
-=== NAME  TestAccKeyVaultCertificate_requiresImport
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== NAME  TestAccKeyVaultCertificate_basicGenerateEllipticCurve
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVault_softDeleteRecovery
-=== NAME  TestAccKeyVault_complete
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccDataSourceKeyVaultCertificate_generated
-=== NAME  TestAccKeyVault_deletePolicy
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccDataSourceKeyVaultCertificate_basic
+=== CONT  TestAccKeyVaultCertificate_basicExtendedKeyUsage
 === NAME  TestAccKeyVault_disappears
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== NAME  TestAccKeyVaultCertificate_basicExtendedKeyUsage
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccKeyVaultCertificate_basicGenerateEllipticCurveAutoKeySize
+--- SKIP: TestAccKeyVault_disappears (0.00s)
+--- SKIP: TestAccKeyVaultCertificate_basicExtendedKeyUsage (0.00s)
+=== CONT  TestAccDataSourceKeyVaultSecret_specifyVersion
+=== NAME  TestAccKeyVaultSecret_basic
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccKeyVaultSecret_basic (0.00s)
+=== NAME  TestAccDataSourceKeyVaultSecret_specifyVersion
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccKeyVaultCertificate_updateTags
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccKeyVaultCertificate_basicGenerateSans
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccKeyVaultCertificate_softDeleteRecovery
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccKeyVaultCertificate_basicGenerateUnknownIssuer
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccKeyVaultCertificate_basicGenerate
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccKeyVaultCertificate_disappearsWhenParentKeyVaultDeleted
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccKeyVaultCertificate_disappears
+--- SKIP: TestAccDataSourceKeyVaultSecret_specifyVersion (0.00s)
+=== NAME  TestAccKeyVaultCertificate_disappears
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccKeyVaultCertificate_disappears (0.00s)
+=== CONT  TestAccKeyVaultCertificate_requiresImport
+--- SKIP: TestAccKeyVaultCertificate_updateTags (0.00s)
+--- SKIP: TestAccKeyVaultCertificate_basicGenerateSans (0.00s)
+--- SKIP: TestAccKeyVaultCertificate_softDeleteRecovery (0.00s)
+--- SKIP: TestAccKeyVaultCertificate_basicGenerateUnknownIssuer (0.00s)
+--- SKIP: TestAccKeyVaultCertificate_basicGenerate (0.00s)
+--- SKIP: TestAccKeyVaultCertificate_disappearsWhenParentKeyVaultDeleted (0.00s)
+=== CONT  TestAccDataSourceKeyVaultSecret_basic
+=== NAME  TestAccKeyVaultCertificate_requiresImport
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccKeyVaultCertificate_requiresImport (0.00s)
+=== CONT  TestAccKeyVaultCertificate_basicImportPFX
+=== CONT  TestAccKeyVault_deletePolicy
 === NAME  TestAccDataSourceKeyVaultSecret_basic
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccDataSourceKeyVaultSecret_basic (0.00s)
+=== CONT  TestAccKeyVaultCertificateIssuer_disappears
+=== CONT  TestAccKeyVault_purgeProtectionAttemptToDisable
+=== NAME  TestAccKeyVaultCertificate_basicImportPFX
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccKeyVaultCertificate_basicImportPFX (0.00s)
+=== CONT  TestAccKeyVaultCertificateIssuer_update
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccKeyVaultCertificateIssuer_update (0.00s)
+=== CONT  TestAccKeyVaultCertificateIssuer_complete
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccKeyVaultCertificateIssuer_complete (0.00s)
+=== CONT  TestAccKeyVaultCertificateIssuer_requiresImport
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccKeyVaultCertificateIssuer_requiresImport (0.00s)
+=== CONT  TestAccKeyVaultCertificateIssuer_basic
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccKeyVaultCertificateIssuer_basic (0.00s)
+=== CONT  TestAccDataSourceKeyVaultCertificateIssuer_basic
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccDataSourceKeyVaultCertificateIssuer_basic (0.00s)
+=== CONT  TestAccDataSourceKeyVaultCertificate_generatedEllipticCurve
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccDataSourceKeyVaultCertificate_generatedEllipticCurve (0.00s)
+=== CONT  TestAccDataSourceKeyVaultCertificate_generated
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccDataSourceKeyVaultCertificate_generated (0.00s)
+=== CONT  TestAccDataSourceKeyVaultCertificate_basic
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccDataSourceKeyVaultCertificate_basic (0.00s)
+=== CONT  TestAccDataSourceKeyVaultCertificateData_rsa_bundle_PFX
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccDataSourceKeyVaultCertificateData_rsa_bundle_PFX (0.00s)
+=== CONT  TestAccDataSourceKeyVaultCertificateData_rsa_single_PEM
+=== CONT  TestAccKeyVault_purgeProtectionViaUpdate
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccKeyVault_purgeProtectionViaUpdate (0.00s)
+=== CONT  TestAccDataSourceKeyVaultCertificateData_rsa_bundle_PEM
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccDataSourceKeyVaultCertificateData_rsa_bundle_PEM (0.00s)
+=== CONT  TestAccDataSourceKeyVaultCertificateData_ecdsa_PEM
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccDataSourceKeyVaultCertificateData_ecdsa_PEM (0.00s)
+=== CONT  TestAccDataSourceKeyVaultCertificateData_ecdsa_PFX
+=== CONT  TestAccKeyVault_purgeProtectionAndSoftDeleteEnabled
+=== NAME  TestAccDataSourceKeyVaultCertificateData_ecdsa_PFX
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccDataSourceKeyVaultCertificateData_ecdsa_PFX (0.00s)
 === NAME  TestAccKeyVault_purgeProtectionAndSoftDeleteEnabled
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccDataSourceKeyVaultCertificateData_rsa_single_PEM
+--- SKIP: TestAccKeyVault_purgeProtectionAndSoftDeleteEnabled (0.00s)
+=== CONT  TestAccKeyVaultCertificateContacts_nonExistentVault
+=== CONT  TestAccDataSourceKeyVaultCertificateData_basic
+=== NAME  TestAccKeyVaultCertificateContacts_nonExistentVault
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccKeyVaultCertificateContacts_nonExistentVault (0.00s)
+=== CONT  TestAccKeyVaultCertificateContacts_update
+=== NAME  TestAccDataSourceKeyVaultCertificateData_basic
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccDataSourceKeyVaultCertificateData_basic (0.00s)
+=== CONT  TestAccKeyVaultCertificateContacts_complete
+=== NAME  TestAccKeyVaultCertificateContacts_update
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccKeyVaultCertificateContacts_update (0.00s)
+=== CONT  TestAccKeyVaultCertificateContacts_requiresImport
+=== NAME  TestAccKeyVaultCertificateContacts_complete
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccKeyVaultCertificateContacts_complete (0.00s)
+=== CONT  TestAccKeyVaultCertificateContacts_basic
+=== NAME  TestAccKeyVaultCertificateContacts_requiresImport
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccKeyVaultCertificateContacts_requiresImport (0.00s)
+=== CONT  TestAccKeyVaultAccessPolicy_nonExistentVault
+=== NAME  TestAccKeyVaultCertificateContacts_basic
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccKeyVaultCertificateContacts_basic (0.00s)
+=== CONT  TestAccKeyVaultAccessPolicy_update
+=== NAME  TestAccKeyVaultAccessPolicy_nonExistentVault
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccKeyVaultAccessPolicy_nonExistentVault (0.00s)
+=== CONT  TestAccKeyVaultAccessPolicy_multiple
+=== NAME  TestAccKeyVaultAccessPolicy_update
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccKeyVaultAccessPolicy_update (0.00s)
+=== CONT  TestAccKeyVaultAccessPolicy_requiresImport
+=== NAME  TestAccKeyVaultAccessPolicy_multiple
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccKeyVaultAccessPolicy_multiple (0.00s)
+=== CONT  TestAccKeyVaultAccessPolicy_basic
+=== CONT  TestAccKeyVault_purgeProtectionEnabled
+=== NAME  TestAccKeyVaultAccessPolicy_basic
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccKeyVaultAccessPolicy_basic (0.00s)
+=== NAME  TestAccKeyVault_purgeProtectionEnabled
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccDataSourceKeyVaultAccessPolicy_keySecretCertificate
+=== NAME  TestAccKeyVaultAccessPolicy_requiresImport
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccDataSourceKeyVaultAccessPolicy_keyCertificate
+=== NAME  TestAccDataSourceKeyVaultAccessPolicy_keySecretCertificate
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccDataSourceKeyVaultAccessPolicy_keySecret
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccDataSourceKeyVaultAccessPolicy_certificate
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccDataSourceKeyVaultAccessPolicy_secret
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccDataSourceKeyVaultAccessPolicy_key
+--- SKIP: TestAccKeyVault_purgeProtectionEnabled (0.00s)
+--- SKIP: TestAccKeyVaultAccessPolicy_requiresImport (0.00s)
+--- SKIP: TestAccDataSourceKeyVaultAccessPolicy_keySecretCertificate (0.00s)
+--- SKIP: TestAccDataSourceKeyVaultAccessPolicy_keySecret (0.00s)
+--- SKIP: TestAccDataSourceKeyVaultAccessPolicy_certificate (0.00s)
+--- SKIP: TestAccDataSourceKeyVaultAccessPolicy_secret (0.00s)
+=== NAME  TestAccDataSourceKeyVaultAccessPolicy_keyCertificate
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccKeyVault_softDelete
+=== CONT  TestAccKeyVaultSecret_updatingValueChangedExternally
+--- SKIP: TestAccDataSourceKeyVaultAccessPolicy_keyCertificate (0.00s)
+=== CONT  TestAccKeyVault_updateContacts
+=== CONT  TestAccKeyVault_upgradeSKU
+=== CONT  TestAccKeyVault_update
+=== CONT  TestAccKeyVault_complete
+=== CONT  TestAccKeyVaultCertificate_basicGenerateEllipticCurve
+=== NAME  TestAccKeyVault_softDelete
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccKeyVault_softDelete (0.00s)
+=== CONT  TestAccDataSourceKeyVaultSecrets_basic
+=== NAME  TestAccDataSourceKeyVaultAccessPolicy_key
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccDataSourceKeyVaultAccessPolicy_key (0.00s)
+=== CONT  TestAccKeyVaultSecret_purge
+=== NAME  TestAccDataSourceKeyVaultSecrets_basic
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccDataSourceKeyVaultSecrets_basic (0.00s)
+=== CONT  TestAccKeyVaultSecret_withExternalAccessPolicy
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccKeyVaultSecret_withExternalAccessPolicy (0.00s)
+=== CONT  TestAccKeyVaultSecret_recovery
+=== NAME  TestAccKeyVaultCertificate_basicGenerateEllipticCurve
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccKeyVaultCertificate_basicGenerateEllipticCurve (0.00s)
+=== CONT  TestAccKeyVaultSecret_disappearsWhenParentKeyVaultDeleted
+=== CONT  TestAccEncryptedValueDataSource_encryptAndDecrypt
+=== NAME  TestAccKeyVaultCertificate_basicGenerateEllipticCurveAutoKeySize
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccKeyVaultCertificate_basicGenerateEllipticCurveAutoKeySize (0.01s)
+=== CONT  TestAccKeyVaultSecret_update
+=== NAME  TestAccKeyVault_complete
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccKeyVault_complete (0.00s)
+=== CONT  TestAccKeyVaultSecret_complete
+=== CONT  TestAccKeyVaultCertificate_basicGenerateTags
+=== CONT  TestAccDataSourceKeyVaultSecret_complete
+=== NAME  TestAccDataSourceKeyVaultCertificateData_rsa_single_PEM
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== NAME  TestAccKeyVaultCertificateIssuer_disappears
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== NAME  TestAccKeyVault_purgeProtectionAttemptToDisable
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== NAME  TestAccKeyVault_deletePolicy
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccDataSourceKeyVaultAccessPolicy_secretCertificate
+=== CONT  TestAccKeyVault_softDeleteRecoveryDisabled
+=== CONT  TestAccKeyVault_softDeleteRecovery
+=== CONT  TestAccKeyVault_justCert
+=== NAME  TestAccKeyVault_updateContacts
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== NAME  TestAccKeyVaultSecret_disappearsWhenParentKeyVaultDeleted
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== NAME  TestAccKeyVaultSecret_purge
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== NAME  TestAccKeyVaultSecret_recovery
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccKeyVaultKey_disappearsWhenParentKeyVaultDeleted
+=== CONT  TestAccKeyVault_accessPolicyUpperLimit
+=== NAME  TestAccKeyVault_update
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccKeyVault_networkAclsAllowed
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccKeyVault_networkAcls
+=== CONT  TestAccKeyVault_requiresImport
+=== CONT  TestAccKeyVault_basic
+=== NAME  TestAccKeyVault_networkAcls
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccKeyVaultManagedStorageAccount_recovery
+=== NAME  TestAccKeyVault_requiresImport
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccKeyVaultManagedStorageAccount_update
+=== NAME  TestAccKeyVaultManagedStorageAccount_recovery
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccKeyVaultManagedStorageAccount_complete
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccKeyVaultManagedStorageAccount_requiresImport
+=== NAME  TestAccKeyVault_justCert
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccKeyVaultManagedStorageAccount_basic
+=== NAME  TestAccKeyVaultManagedStorageAccount_requiresImport
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccKeyVaultManagedStorageAccountSasTokenDefinition_recovery
+=== NAME  TestAccKeyVaultSecret_updatingValueChangedExternally
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccKeyVaultManagedStorageAccountSasTokenDefinition_update
+=== NAME  TestAccKeyVault_basic
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccKeyVaultManagedStorageAccountSasTokenDefinition_complete
+=== NAME  TestAccKeyVault_accessPolicyUpperLimit
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccKeyVaultManagedStorageAccountSasTokenDefinition_requiresImport
+=== NAME  TestAccKeyVault_softDeleteRecoveryDisabled
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccKeyVaultManagedStorageAccountSasTokenDefinition_basic
+=== NAME  TestAccKeyVaultManagedStorageAccountSasTokenDefinition_update
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccKeyVaultKey_RotationPolicyUnauthorized
+=== NAME  TestAccKeyVaultManagedStorageAccountSasTokenDefinition_basic
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccKeyVaultKey_RotationPolicyUpdate
+=== NAME  TestAccKeyVaultManagedStorageAccountSasTokenDefinition_requiresImport
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccKeyVaultKey_RotationPolicyWithOnlyAutoRotation
+=== NAME  TestAccKeyVaultManagedStorageAccount_update
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccKeyVaultKey_RotationPolicyWithoutAutoRotation
+=== CONT  TestAccKeyVaultKey_purge
+=== NAME  TestAccKeyVaultManagedStorageAccountSasTokenDefinition_complete
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccKeyVaultKey_withExternalAccessPolicy
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccKeyVaultKey_basicEC
+=== NAME  TestAccKeyVault_softDeleteRecovery
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccKeyVaultKey_disappears
+=== NAME  TestAccDataSourceKeyVaultSecret_complete
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccKeyVaultKey_updatedExternally
+=== NAME  TestAccKeyVaultKey_RotationPolicyUpdate
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== NAME  TestAccKeyVaultKey_updatedExternally
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccKeyVaultKey_update
+=== NAME  TestAccKeyVaultKey_basicEC
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccKeyVaultKey_softDeleteRecovery
+=== CONT  TestAccKeyVaultKey_complete
+=== NAME  TestAccKeyVaultKey_update
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccKeyVaultKey_basicRSAHSM
+=== NAME  TestAccKeyVaultKey_disappearsWhenParentKeyVaultDeleted
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccKeyVaultKey_basicRSA
+=== NAME  TestAccKeyVaultKey_complete
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccKeyVaultKey_curveEC
+=== NAME  TestAccKeyVaultSecret_complete
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccKeyVaultKey_basicECHSM
 === NAME  TestAccKeyVaultKey_disappears
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccKeyVaultKey_requiresImport
+=== NAME  TestAccKeyVaultKey_RotationPolicyUnauthorized
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccKeyVaultSecret_disappears
+=== NAME  TestAccKeyVaultKey_softDeleteRecovery
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== NAME  TestAccKeyVaultSecret_update
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccDataSourceKeyVaultCertificates_basic
+=== NAME  TestAccKeyVault_upgradeSKU
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccDataSourceKeyVaultKey_complete
+=== NAME  TestAccDataSourceKeyVaultCertificates_basic
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
 === NAME  TestAccKeyVaultKey_requiresImport
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccDataSourceKeyVaultCertificateData_ecdsa_PFX
-=== CONT  TestAccDataSourceKeyVaultCertificateData_rsa_bundle_PEM
-=== NAME  TestAccKeyVaultSecret_basic
+=== NAME  TestAccEncryptedValueDataSource_encryptAndDecrypt
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccDataSourceKeyVaultCertificateData_basic
-=== NAME  TestAccKeyVault_accessPolicyUpperLimit
+--- SKIP: TestAccKeyVault_deletePolicy (0.01s)
+--- SKIP: TestAccEncryptedValueDataSource_encryptAndDecrypt (0.01s)
+=== NAME  TestAccKeyVaultKey_purge
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== NAME  TestAccDataSourceKeyVaultKey_complete
+=== CONT  TestAccKeyVaultCertificate_updatedImportedCertificate
+=== CONT  TestAccKeyVaultCertificate_purge
+=== NAME  TestAccKeyVaultManagedStorageAccountSasTokenDefinition_recovery
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVaultCertificateContacts_nonExistentVault
-=== CONT  TestAccKeyVaultCertificateContacts_update
-=== NAME  TestAccKeyVaultCertificateContacts_requiresImport
+=== CONT  TestAccKeyVaultCertificate_unorderedKeyUsage
+=== NAME  TestAccKeyVaultCertificate_updatedImportedCertificate
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVaultCertificateContacts_complete
-=== NAME  TestAccDataSourceKeyVaultCertificateData_basic
+=== CONT  TestAccKeyVaultCertificate_withExternalAccessPolicy
+=== CONT  TestAccKeyVaultCertificate_emptyExtendedKeyUsage
+=== NAME  TestAccKeyVaultKey_curveEC
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVault_softDelete
-=== NAME  TestAccKeyVaultCertificateContacts_nonExistentVault
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== NAME  TestAccDataSourceKeyVaultCertificate_generated
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVault_justCert
-=== CONT  TestAccKeyVault_softDeleteRecoveryDisabled
-=== NAME  TestAccKeyVault_purgeProtectionViaUpdate
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccDataSourceKeyVaultAccessPolicy_keySecretCertificate
-=== NAME  TestAccKeyVault_softDeleteRecovery
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVaultCertificateContacts_basic
-=== NAME  TestAccKeyVaultCertificateContacts_update
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVaultAccessPolicy_nonExistentVault
-=== NAME  TestAccDataSourceKeyVaultCertificateData_rsa_bundle_PEM
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== NAME  TestAccDataSourceKeyVaultCertificate_basic
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== NAME  TestAccKeyVaultCertificateContacts_complete
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVaultAccessPolicy_requiresImport
-=== CONT  TestAccKeyVaultAccessPolicy_multiple
-=== NAME  TestAccKeyVaultCertificate_softDeleteRecovery
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVaultAccessPolicy_basic
-=== CONT  TestAccDataSourceKeyVaultCertificate_generatedEllipticCurve
-=== NAME  TestAccKeyVaultAccessPolicy_nonExistentVault
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccDataSourceKeyVaultAccessPolicy_keySecret
-=== NAME  TestAccKeyVault_softDelete
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccDataSourceKeyVaultAccessPolicy_secretCertificate
-=== NAME  TestAccDataSourceKeyVaultAccessPolicy_keySecret
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccDataSourceKeyVaultAccessPolicy_keyCertificate
-=== NAME  TestAccDataSourceKeyVaultCertificateData_rsa_single_PEM
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccDataSourceKeyVaultAccessPolicy_secret
-=== NAME  TestAccDataSourceKeyVaultAccessPolicy_keySecretCertificate
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== NAME  TestAccDataSourceKeyVaultCertificateData_ecdsa_PFX
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccDataSourceKeyVaultAccessPolicy_certificate
-=== CONT  TestAccDataSourceKeyVaultAccessPolicy_key
-=== NAME  TestAccKeyVaultAccessPolicy_requiresImport
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVault_purgeProtectionEnabled
-=== NAME  TestAccDataSourceKeyVaultCertificate_generatedEllipticCurve
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVaultManagedStorageAccountSasTokenDefinition_requiresImport
 === NAME  TestAccDataSourceKeyVaultAccessPolicy_secretCertificate
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== NAME  TestAccKeyVault_softDeleteRecoveryDisabled
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
---- SKIP: TestAccDataSourceKeyVaultSecrets_basic (0.00s)
---- SKIP: TestAccEncryptedValueDataSource_encryptAndDecrypt (0.00s)
-=== CONT  TestAccDataSourceKeyVaultCertificateData_rsa_bundle_PFX
-=== NAME  TestAccKeyVault_justCert
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
---- SKIP: TestAccKeyVault_justCert (0.00s)
-=== NAME  TestAccDataSourceKeyVault_update
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
---- SKIP: TestAccKeyVaultManagedStorageAccount_recovery (0.00s)
---- SKIP: TestAccDataSourceKeyVault_update (0.00s)
---- SKIP: TestAccKeyVaultSecret_disappears (0.00s)
-=== CONT  TestAccDataSourceKeyVaultCertificateData_ecdsa_PEM
---- SKIP: TestAccKeyVaultManagedStorageAccount_complete (0.00s)
---- SKIP: TestAccKeyVault_networkAclsAllowed (0.00s)
---- SKIP: TestAccKeyVaultSecret_recovery (0.00s)
---- SKIP: TestAccKeyVaultSecret_update (0.00s)
---- SKIP: TestAccKeyVaultSecret_disappearsWhenParentKeyVaultDeleted (0.00s)
---- SKIP: TestAccKeyVaultManagedStorageAccount_basic (0.00s)
---- SKIP: TestAccKeyVaultManagedStorageAccountSasTokenDefinition_recovery (0.00s)
---- SKIP: TestAccKeyVaultManagedStorageAccount_update (0.00s)
---- SKIP: TestAccKeyVaultSecret_purge (0.00s)
---- SKIP: TestAccKeyVaultKey_RotationPolicyUpdate (0.00s)
---- SKIP: TestAccKeyVaultSecret_withExternalAccessPolicy (0.00s)
---- SKIP: TestAccKeyVaultKey_disappearsWhenParentKeyVaultDeleted (0.00s)
---- SKIP: TestAccKeyVaultManagedStorageAccountSasTokenDefinition_complete (0.00s)
---- SKIP: TestAccKeyVaultKey_RotationPolicyWithOnlyAutoRotation (0.00s)
-=== NAME  TestAccDataSourceKeyVaultAccessPolicy_keyCertificate
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== NAME  TestAccKeyVaultManagedStorageAccountSasTokenDefinition_requiresImport
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
---- SKIP: TestAccKeyVaultManagedStorageAccountSasTokenDefinition_basic (0.00s)
---- SKIP: TestAccKeyVaultKey_complete (0.00s)
-=== NAME  TestAccKeyVaultSecret_updatingValueChangedExternally
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVaultCertificate_basicGenerate
-=== NAME  TestAccDataSourceKeyVaultAccessPolicy_certificate
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccKeyVaultAccessPolicy_update
---- SKIP: TestAccKeyVaultKey_basicRSA (0.00s)
---- SKIP: TestAccKeyVaultKey_purge (0.00s)
+=== CONT  TestAccDataSourceKeyVault_update
+=== CONT  TestAccDataSourceKeyVault_networkAcls
 === NAME  TestAccKeyVaultCertificate_withExternalAccessPolicy
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
---- SKIP: TestAccKeyVaultKey_softDeleteRecovery (0.00s)
---- SKIP: TestAccKeyVaultCertificate_withExternalAccessPolicy (0.00s)
---- SKIP: TestAccKeyVaultKey_update (0.00s)
---- SKIP: TestAccKeyVault_networkAcls (0.00s)
-=== NAME  TestAccKeyVaultCertificateContacts_basic
+=== NAME  TestAccKeyVaultManagedStorageAccount_basic
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
---- SKIP: TestAccKeyVaultKey_RotationPolicyUnauthorized (0.00s)
---- SKIP: TestAccKeyVaultCertificateContacts_basic (0.00s)
---- SKIP: TestAccKeyVaultKey_withExternalAccessPolicy (0.00s)
---- SKIP: TestAccDataSourceKeyVaultCertificateIssuer_basic (0.00s)
---- SKIP: TestAccKeyVaultCertificate_updatedImportedCertificate (0.00s)
+=== CONT  TestAccDataSourceKeyVault_complete
+=== NAME  TestAccKeyVaultKey_RotationPolicyWithoutAutoRotation
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== NAME  TestAccKeyVaultKey_RotationPolicyWithOnlyAutoRotation
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== NAME  TestAccKeyVaultCertificate_purge
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccKeyVaultSecret_requiresImport
+=== NAME  TestAccDataSourceKeyVaultKey_complete
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccDataSourceKeyVault_basic
+=== NAME  TestAccKeyVaultKey_basicECHSM
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccKeyVaultSecret_recovery (0.00s)
 --- SKIP: TestAccKeyVault_update (0.00s)
---- SKIP: TestAccKeyVaultKey_RotationPolicyWithoutAutoRotation (0.00s)
---- SKIP: TestAccKeyVaultKey_basicRSAHSM (0.00s)
-=== NAME  TestAccDataSourceKeyVaultCertificateData_ecdsa_PEM
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== NAME  TestAccKeyVaultAccessPolicy_update
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
---- SKIP: TestAccDataSourceKeyVault_basic (0.00s)
---- SKIP: TestAccKeyVaultCertificate_emptyExtendedKeyUsage (0.00s)
---- SKIP: TestAccDataSourceKeyVault_networkAcls (0.00s)
---- SKIP: TestAccKeyVault_basic (0.00s)
---- SKIP: TestAccKeyVaultCertificate_purge (0.00s)
-=== NAME  TestAccKeyVaultAccessPolicy_basic
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
---- SKIP: TestAccKeyVaultKey_updatedExternally (0.00s)
---- SKIP: TestAccKeyVaultAccessPolicy_basic (0.00s)
-=== NAME  TestAccDataSourceKeyVaultAccessPolicy_key
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
---- SKIP: TestAccKeyVault_upgradeSKU (0.00s)
---- SKIP: TestAccDataSourceKeyVaultAccessPolicy_key (0.00s)
---- SKIP: TestAccKeyVaultCertificate_unorderedKeyUsage (0.00s)
+--- SKIP: TestAccKeyVault_networkAclsAllowed (0.00s)
+--- SKIP: TestAccDataSourceKeyVaultCertificateData_rsa_single_PEM (0.01s)
+--- SKIP: TestAccKeyVaultSecret_disappearsWhenParentKeyVaultDeleted (0.00s)
+--- SKIP: TestAccKeyVault_networkAcls (0.00s)
 --- SKIP: TestAccKeyVault_requiresImport (0.00s)
---- SKIP: TestAccDataSourceKeyVault_complete (0.00s)
---- SKIP: TestAccDataSourceKeyVaultCertificates_basic (0.00s)
---- SKIP: TestAccKeyVaultCertificate_disappears (0.00s)
---- SKIP: TestAccKeyVaultCertificate_updateTags (0.00s)
---- SKIP: TestAccKeyVaultCertificate_basicGenerateSans (0.00s)
---- SKIP: TestAccKeyVaultCertificate_basicGenerateEllipticCurveAutoKeySize (0.00s)
---- SKIP: TestAccKeyVaultCertificate_basicExtendedKeyUsage (0.00s)
---- SKIP: TestAccKeyVaultCertificate_disappearsWhenParentKeyVaultDeleted (0.00s)
-=== NAME  TestAccDataSourceKeyVaultCertificateData_rsa_bundle_PFX
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== NAME  TestAccKeyVault_purgeProtectionEnabled
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
---- SKIP: TestAccKeyVaultCertificate_basicGenerateUnknownIssuer (0.00s)
---- SKIP: TestAccKeyVaultCertificateIssuer_update (0.00s)
-=== NAME  TestAccKeyVaultCertificate_basicGenerate
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
---- SKIP: TestAccKeyVaultKey_curveEC (0.00s)
---- SKIP: TestAccKeyVaultCertificate_basicGenerate (0.00s)
-=== NAME  TestAccDataSourceKeyVaultAccessPolicy_secret
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
---- SKIP: TestAccKeyVaultCertificateIssuer_disappears (0.00s)
-=== NAME  TestAccKeyVaultAccessPolicy_multiple
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
---- SKIP: TestAccKeyVaultCertificateIssuer_basic (0.00s)
---- SKIP: TestAccKeyVaultAccessPolicy_multiple (0.00s)
---- SKIP: TestAccKeyVaultKey_basicECHSM (0.00s)
---- SKIP: TestAccKeyVaultKey_basicEC (0.00s)
---- SKIP: TestAccKeyVaultCertificateIssuer_complete (0.00s)
---- SKIP: TestAccKeyVaultCertificateIssuer_requiresImport (0.00s)
---- SKIP: TestAccDataSourceKeyVaultSecret_complete (0.00s)
---- SKIP: TestAccKeyVaultCertificate_basicImportPFX (0.00s)
---- SKIP: TestAccKeyVaultManagedStorageAccountSasTokenDefinition_update (0.00s)
---- SKIP: TestAccKeyVault_purgeProtectionAttemptToDisable (0.00s)
---- SKIP: TestAccKeyVaultCertificate_requiresImport (0.00s)
---- SKIP: TestAccKeyVaultCertificate_basicGenerateEllipticCurve (0.00s)
---- SKIP: TestAccKeyVault_complete (0.00s)
---- SKIP: TestAccKeyVault_deletePolicy (0.00s)
---- SKIP: TestAccKeyVault_disappears (0.00s)
---- SKIP: TestAccDataSourceKeyVaultSecret_basic (0.00s)
---- SKIP: TestAccKeyVault_purgeProtectionAndSoftDeleteEnabled (0.00s)
---- SKIP: TestAccKeyVaultKey_disappears (0.00s)
---- SKIP: TestAccKeyVaultKey_requiresImport (0.00s)
---- SKIP: TestAccKeyVaultSecret_basic (0.00s)
---- SKIP: TestAccKeyVault_accessPolicyUpperLimit (0.00s)
---- SKIP: TestAccDataSourceKeyVaultKey_complete (0.00s)
---- SKIP: TestAccKeyVaultCertificateContacts_requiresImport (0.00s)
---- SKIP: TestAccDataSourceKeyVaultCertificateData_basic (0.00s)
---- SKIP: TestAccKeyVaultCertificateContacts_nonExistentVault (0.00s)
---- SKIP: TestAccDataSourceKeyVaultCertificate_generated (0.00s)
---- SKIP: TestAccKeyVault_purgeProtectionViaUpdate (0.00s)
---- SKIP: TestAccKeyVault_softDeleteRecovery (0.00s)
---- SKIP: TestAccKeyVaultCertificateContacts_update (0.00s)
---- SKIP: TestAccDataSourceKeyVaultCertificateData_rsa_bundle_PEM (0.00s)
---- SKIP: TestAccDataSourceKeyVaultCertificate_basic (0.00s)
---- SKIP: TestAccKeyVaultCertificateContacts_complete (0.00s)
---- SKIP: TestAccKeyVaultCertificate_softDeleteRecovery (0.00s)
---- SKIP: TestAccKeyVaultAccessPolicy_nonExistentVault (0.00s)
---- SKIP: TestAccKeyVault_softDelete (0.00s)
---- SKIP: TestAccDataSourceKeyVaultAccessPolicy_keySecret (0.00s)
---- SKIP: TestAccDataSourceKeyVaultCertificateData_rsa_single_PEM (0.00s)
---- SKIP: TestAccDataSourceKeyVaultAccessPolicy_keySecretCertificate (0.00s)
---- SKIP: TestAccDataSourceKeyVaultCertificateData_ecdsa_PFX (0.00s)
---- SKIP: TestAccKeyVaultAccessPolicy_requiresImport (0.00s)
---- SKIP: TestAccDataSourceKeyVaultCertificate_generatedEllipticCurve (0.00s)
---- SKIP: TestAccDataSourceKeyVaultAccessPolicy_secretCertificate (0.00s)
---- SKIP: TestAccKeyVault_softDeleteRecoveryDisabled (0.00s)
---- SKIP: TestAccDataSourceKeyVaultAccessPolicy_keyCertificate (0.00s)
---- SKIP: TestAccKeyVaultManagedStorageAccountSasTokenDefinition_requiresImport (0.00s)
+--- SKIP: TestAccKeyVaultManagedStorageAccount_recovery (0.00s)
+--- SKIP: TestAccKeyVaultManagedStorageAccount_complete (0.00s)
+--- SKIP: TestAccKeyVault_justCert (0.00s)
+--- SKIP: TestAccKeyVaultManagedStorageAccount_requiresImport (0.00s)
 --- SKIP: TestAccKeyVaultSecret_updatingValueChangedExternally (0.01s)
---- SKIP: TestAccDataSourceKeyVaultAccessPolicy_certificate (0.00s)
---- SKIP: TestAccDataSourceKeyVaultCertificateData_ecdsa_PEM (0.00s)
---- SKIP: TestAccKeyVaultAccessPolicy_update (0.00s)
---- SKIP: TestAccDataSourceKeyVaultCertificateData_rsa_bundle_PFX (0.00s)
---- SKIP: TestAccKeyVault_purgeProtectionEnabled (0.00s)
---- SKIP: TestAccDataSourceKeyVaultAccessPolicy_secret (0.00s)
+--- SKIP: TestAccKeyVault_basic (0.00s)
+--- SKIP: TestAccKeyVault_accessPolicyUpperLimit (0.00s)
+--- SKIP: TestAccKeyVault_softDeleteRecoveryDisabled (0.00s)
+--- SKIP: TestAccKeyVaultManagedStorageAccountSasTokenDefinition_update (0.00s)
+--- SKIP: TestAccKeyVaultManagedStorageAccountSasTokenDefinition_basic (0.00s)
+--- SKIP: TestAccKeyVaultManagedStorageAccountSasTokenDefinition_requiresImport (0.00s)
+--- SKIP: TestAccKeyVaultManagedStorageAccount_update (0.00s)
+--- SKIP: TestAccKeyVaultSecret_purge (0.01s)
+--- SKIP: TestAccKeyVaultManagedStorageAccountSasTokenDefinition_complete (0.00s)
+--- SKIP: TestAccKeyVaultKey_withExternalAccessPolicy (0.00s)
+--- SKIP: TestAccKeyVault_softDeleteRecovery (0.00s)
+--- SKIP: TestAccDataSourceKeyVaultSecret_complete (0.00s)
+--- SKIP: TestAccKeyVaultKey_RotationPolicyUpdate (0.00s)
+--- SKIP: TestAccKeyVaultKey_updatedExternally (0.00s)
+--- SKIP: TestAccKeyVaultKey_basicEC (0.00s)
+--- SKIP: TestAccKeyVaultKey_update (0.00s)
+--- SKIP: TestAccKeyVaultKey_disappearsWhenParentKeyVaultDeleted (0.00s)
+--- SKIP: TestAccKeyVaultKey_complete (0.00s)
+--- SKIP: TestAccKeyVaultSecret_complete (0.00s)
+--- SKIP: TestAccKeyVaultKey_disappears (0.00s)
+--- SKIP: TestAccKeyVaultKey_RotationPolicyUnauthorized (0.00s)
+--- SKIP: TestAccKeyVaultKey_softDeleteRecovery (0.00s)
+--- SKIP: TestAccKeyVaultSecret_update (0.00s)
+--- SKIP: TestAccKeyVault_upgradeSKU (0.01s)
+--- SKIP: TestAccDataSourceKeyVaultCertificates_basic (0.00s)
+--- SKIP: TestAccKeyVaultCertificateIssuer_disappears (0.02s)
+--- SKIP: TestAccKeyVaultKey_requiresImport (0.00s)
+=== NAME  TestAccKeyVaultCertificate_emptyExtendedKeyUsage
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== NAME  TestAccDataSourceKeyVault_basic
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccKeyVaultCertificate_emptyExtendedKeyUsage (0.00s)
+--- SKIP: TestAccDataSourceKeyVault_basic (0.00s)
+--- SKIP: TestAccKeyVault_updateContacts (0.01s)
+--- SKIP: TestAccKeyVaultManagedStorageAccountSasTokenDefinition_recovery (0.00s)
+--- SKIP: TestAccKeyVaultCertificate_updatedImportedCertificate (0.00s)
+--- SKIP: TestAccKeyVault_purgeProtectionAttemptToDisable (0.02s)
+--- SKIP: TestAccKeyVaultKey_curveEC (0.00s)
+--- SKIP: TestAccDataSourceKeyVaultAccessPolicy_secretCertificate (0.00s)
+=== NAME  TestAccKeyVaultCertificate_unorderedKeyUsage
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccKeyVaultCertificate_unorderedKeyUsage (0.00s)
+=== NAME  TestAccKeyVaultKey_basicRSA
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== NAME  TestAccDataSourceKeyVault_complete
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccKeyVaultKey_basicRSA (0.00s)
+--- SKIP: TestAccKeyVaultCertificate_withExternalAccessPolicy (0.00s)
+--- SKIP: TestAccKeyVaultManagedStorageAccount_basic (0.00s)
+--- SKIP: TestAccKeyVaultKey_RotationPolicyWithoutAutoRotation (0.00s)
+--- SKIP: TestAccKeyVaultKey_RotationPolicyWithOnlyAutoRotation (0.00s)
+--- SKIP: TestAccKeyVaultCertificate_purge (0.00s)
+--- SKIP: TestAccDataSourceKeyVaultKey_complete (0.00s)
+=== NAME  TestAccKeyVaultSecret_disappears
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccKeyVaultKey_basicECHSM (0.00s)
+--- SKIP: TestAccKeyVaultSecret_disappears (0.00s)
+--- SKIP: TestAccKeyVaultKey_purge (0.00s)
+--- SKIP: TestAccDataSourceKeyVault_complete (0.00s)
+=== NAME  TestAccKeyVaultSecret_requiresImport
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccKeyVaultSecret_requiresImport (0.00s)
+=== NAME  TestAccDataSourceKeyVault_networkAcls
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccDataSourceKeyVault_networkAcls (0.00s)
+=== NAME  TestAccKeyVaultKey_basicRSAHSM
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccKeyVaultKey_basicRSAHSM (0.00s)
+=== NAME  TestAccDataSourceKeyVault_update
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccDataSourceKeyVault_update (0.00s)
+=== NAME  TestAccKeyVaultCertificate_basicGenerateTags
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
 --- SKIP: TestAccKeyVaultCertificate_basicGenerateTags (0.00s)
 PASS
-ok  	github.com/hashicorp/terraform-provider-azurerm/internal/services/keyvault	0.168s
+ok  	github.com/hashicorp/terraform-provider-azurerm/internal/services/keyvault	0.164s
 === RUN   TestAccessPolicyApplicationIDFormatter
 --- PASS: TestAccessPolicyApplicationIDFormatter (0.00s)
 === RUN   TestAccessPolicyApplicationID
@@ -2148,27 +2117,26 @@ ok  	github.com/hashicorp/terraform-provider-azurerm/internal/services/keyvault/
 === PAUSE TestAccUserAssignedIdentity_update
 === CONT  TestAccDataSourceAzureRMUserAssignedIdentity_basic
 === CONT  TestAccUserAssignedIdentity_complete
-=== CONT  TestAccUserAssignedIdentity_update
 === CONT  TestAccUserAssignedIdentity_requiresImport
-=== NAME  TestAccDataSourceAzureRMUserAssignedIdentity_basic
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccUserAssignedIdentity_update
 === NAME  TestAccUserAssignedIdentity_complete
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
 --- SKIP: TestAccUserAssignedIdentity_complete (0.00s)
 === CONT  TestAccUserAssignedIdentity_basic
---- SKIP: TestAccDataSourceAzureRMUserAssignedIdentity_basic (0.00s)
 === NAME  TestAccUserAssignedIdentity_requiresImport
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
 --- SKIP: TestAccUserAssignedIdentity_requiresImport (0.00s)
-=== NAME  TestAccUserAssignedIdentity_basic
+=== NAME  TestAccDataSourceAzureRMUserAssignedIdentity_basic
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
---- SKIP: TestAccUserAssignedIdentity_basic (0.00s)
+--- SKIP: TestAccDataSourceAzureRMUserAssignedIdentity_basic (0.00s)
 === NAME  TestAccUserAssignedIdentity_update
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
 --- SKIP: TestAccUserAssignedIdentity_update (0.00s)
+=== NAME  TestAccUserAssignedIdentity_basic
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccUserAssignedIdentity_basic (0.00s)
 PASS
-ok  	github.com/hashicorp/terraform-provider-azurerm/internal/services/managedidentity	0.136s
-?   	github.com/hashicorp/terraform-provider-azurerm/internal/services/managementgroup/client	[no test files]
+ok  	github.com/hashicorp/terraform-provider-azurerm/internal/services/managedidentity	0.124s
 === RUN   TestAccManagementGroupDataSource_basicByName
 === PAUSE TestAccManagementGroupDataSource_basicByName
 === RUN   TestAccManagementGroupDataSource_basicByDisplayName
@@ -2202,51 +2170,46 @@ ok  	github.com/hashicorp/terraform-provider-azurerm/internal/services/managedid
         --- SKIP: TestAccManagementGroupSubscriptionAssociation/Resource/basic (0.00s)
         --- SKIP: TestAccManagementGroupSubscriptionAssociation/Resource/requiresImport (0.00s)
 === CONT  TestAccManagementGroupDataSource_basicByName
-=== CONT  TestAccManagementGroup_multiLevel
-=== CONT  TestAccManagementGroup_updateName
-=== NAME  TestAccManagementGroupDataSource_basicByName
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
 --- SKIP: TestAccManagementGroupDataSource_basicByName (0.00s)
-=== CONT  TestAccManagementGroupDataSource_nestedManagmentGroup
-=== CONT  TestAccManagementGroup_basic
-=== NAME  TestAccManagementGroup_multiLevel
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== NAME  TestAccManagementGroupDataSource_nestedManagmentGroup
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccManagementGroup_multiLevelUpdated
 === CONT  TestAccManagementGroup_withSubscriptions
---- SKIP: TestAccManagementGroup_multiLevel (0.00s)
---- SKIP: TestAccManagementGroupDataSource_nestedManagmentGroup (0.00s)
-=== CONT  TestAccManagementGroup_withName
-=== NAME  TestAccManagementGroup_updateName
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
---- SKIP: TestAccManagementGroup_updateName (0.00s)
-=== NAME  TestAccManagementGroup_basic
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
---- SKIP: TestAccManagementGroup_basic (0.00s)
-=== CONT  TestAccManagementGroupDataSource_basicByDisplayName
-=== CONT  TestAccManagementGroup_nested
-=== NAME  TestAccManagementGroup_multiLevelUpdated
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
---- SKIP: TestAccManagementGroup_multiLevelUpdated (0.00s)
-=== CONT  TestAccManagementGroup_requiresImport
-=== NAME  TestAccManagementGroup_withName
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
---- SKIP: TestAccManagementGroup_withName (0.00s)
-=== NAME  TestAccManagementGroup_withSubscriptions
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
 --- SKIP: TestAccManagementGroup_withSubscriptions (0.00s)
-=== NAME  TestAccManagementGroupDataSource_basicByDisplayName
+=== CONT  TestAccManagementGroup_updateName
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
---- SKIP: TestAccManagementGroupDataSource_basicByDisplayName (0.00s)
+--- SKIP: TestAccManagementGroup_updateName (0.00s)
+=== CONT  TestAccManagementGroup_requiresImport
+=== CONT  TestAccManagementGroup_nested
 === NAME  TestAccManagementGroup_requiresImport
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
 --- SKIP: TestAccManagementGroup_requiresImport (0.00s)
+=== CONT  TestAccManagementGroup_basic
 === NAME  TestAccManagementGroup_nested
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== NAME  TestAccManagementGroup_basic
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
 --- SKIP: TestAccManagementGroup_nested (0.00s)
+--- SKIP: TestAccManagementGroup_basic (0.00s)
+=== CONT  TestAccManagementGroup_withName
+=== CONT  TestAccManagementGroupDataSource_nestedManagmentGroup
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccManagementGroupDataSource_nestedManagmentGroup (0.00s)
+=== CONT  TestAccManagementGroupDataSource_basicByDisplayName
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccManagementGroupDataSource_basicByDisplayName (0.00s)
+=== CONT  TestAccManagementGroup_multiLevelUpdated
+=== NAME  TestAccManagementGroup_withName
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccManagementGroup_withName (0.00s)
+=== CONT  TestAccManagementGroup_multiLevel
+=== NAME  TestAccManagementGroup_multiLevelUpdated
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccManagementGroup_multiLevelUpdated (0.00s)
+=== NAME  TestAccManagementGroup_multiLevel
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccManagementGroup_multiLevel (0.00s)
 PASS
-ok  	github.com/hashicorp/terraform-provider-azurerm/internal/services/managementgroup	0.097s
+ok  	github.com/hashicorp/terraform-provider-azurerm/internal/services/managementgroup	0.126s
 === RUN   TestManagementGroupSubscriptionAssociationID
     management_group_subscription_association_test.go:53: [DEBUG] Testing "Empty"
     management_group_subscription_association_test.go:53: [DEBUG] Testing "Missing Subscription"
@@ -2368,145 +2331,143 @@ ok  	github.com/hashicorp/terraform-provider-azurerm/internal/services/managemen
 === CONT  TestAccDataSourceSubnet_basic
 === CONT  TestAccSubnet_serviceEndpoints
 === CONT  TestAccSubnet_requiresImport
-=== CONT  TestAccSubnet_enforcePrivateLinkEndpointNetworkPolicies
-=== CONT  TestAccSubnet_enablePrivateEndpointNetworkPolicies
-=== CONT  TestAccSubnet_update_addressPrefixes
-=== CONT  TestAccSubnet_complete_addressPrefixes
 === NAME  TestAccDataSourceSubnet_basic
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
---- SKIP: TestAccDataSourceSubnet_basic (0.00s)
-=== NAME  TestAccSubnet_requiresImport
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
---- SKIP: TestAccSubnet_requiresImport (0.00s)
-=== CONT  TestAccSubnet_delegation
-=== CONT  TestAccSubnet_disappears
-=== NAME  TestAccSubnet_complete_addressPrefixes
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
---- SKIP: TestAccSubnet_complete_addressPrefixes (0.00s)
-=== CONT  TestAccSubnet_enablePrivateLinkServiceNetworkPolicies
-=== NAME  TestAccSubnet_disappears
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
---- SKIP: TestAccSubnet_disappears (0.00s)
-=== CONT  TestAccVirtualNetwork_deleteSubnet
-=== CONT  TestAccDataSourceAzureRMSubnet_basic_addressPrefixes
-=== NAME  TestAccSubnet_delegation
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccSubnet_PrivateLinkPoliciesToggleWithEnforceFirst
-=== CONT  TestAccSubnet_PrivateLinkPoliciesToggleWithEnabledFirst
-=== CONT  TestAccVirtualNetwork_basic
-=== CONT  TestAccVirtualNetwork_basicUpdated
-=== CONT  TestAccVirtualNetwork_updateFlowTimeoutInMinutes
-=== CONT  TestAccSubnet_basic_addressPrefixes
-=== CONT  TestAccSubnet_basic
-=== CONT  TestAccDataSourceSubnet_serviceEndpoints
-=== CONT  TestAccVirtualNetwork_complete
-=== CONT  TestAccVirtualNetwork_requiresImport
 === NAME  TestAccSubnet_serviceEndpoints
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== NAME  TestAccSubnet_enforcePrivateLinkEndpointNetworkPolicies
+=== NAME  TestAccSubnet_requiresImport
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccDataSourceSubnet_basic (0.00s)
+=== CONT  TestAccSubnet_update_addressPrefixes
+=== CONT  TestAccSubnet_enforcePrivateLinkServiceNetworkPolicies
+=== CONT  TestVirtualNetworkResource_tagCount
+=== CONT  TestAccVirtualNetwork_basicUpdated
 === NAME  TestAccSubnet_update_addressPrefixes
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== NAME  TestAccSubnet_enablePrivateEndpointNetworkPolicies
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccDataSourceSubnet_routeTable
-=== NAME  TestAccDataSourceAzureRMSubnet_basic_addressPrefixes
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
---- SKIP: TestAccDataSourceAzureRMSubnet_basic_addressPrefixes (0.00s)
-=== CONT  TestVirtualNetworkResource_tagCount
-=== NAME  TestAccDataSourceSubnet_routeTable
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
---- SKIP: TestAccDataSourceSubnet_routeTable (0.00s)
-=== CONT  TestAccVirtualNetwork_edgeZone
+=== CONT  TestAccSubnet_disappears
+--- SKIP: TestAccSubnet_requiresImport (0.00s)
+--- SKIP: TestAccSubnet_serviceEndpoints (0.00s)
+--- SKIP: TestAccSubnet_update_addressPrefixes (0.00s)
+=== CONT  TestAccSubnet_complete_addressPrefixes
 === NAME  TestVirtualNetworkResource_tagCount
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
 --- SKIP: TestVirtualNetworkResource_tagCount (0.00s)
-=== CONT  TestAccVirtualNetwork_bgpCommunity
-=== NAME  TestAccVirtualNetwork_updateFlowTimeoutInMinutes
+=== CONT  TestAccVirtualNetwork_updateFlowTimeoutInMinutes
+=== NAME  TestAccSubnet_complete_addressPrefixes
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
---- SKIP: TestAccVirtualNetwork_updateFlowTimeoutInMinutes (0.00s)
-=== CONT  TestAccSubnet_enforcePrivateLinkServiceNetworkPolicies
-=== NAME  TestAccVirtualNetwork_edgeZone
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccVirtualNetwork_ddosProtectionPlan
-=== CONT  TestAccSubnet_privateLinkEndpointNetworkPoliciesValidateDefaultValues
-=== NAME  TestAccVirtualNetwork_ddosProtectionPlan
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccSubnet_updateServiceDelegation
-=== NAME  TestAccSubnet_PrivateLinkPoliciesToggleWithEnabledFirst
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccSubnet_updateAddressPrefix
-=== NAME  TestAccVirtualNetwork_basic
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== NAME  TestAccSubnet_updateServiceDelegation
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== NAME  TestAccSubnet_updateAddressPrefix
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
---- SKIP: TestAccSubnet_enablePrivateEndpointNetworkPolicies (0.01s)
+--- SKIP: TestAccSubnet_complete_addressPrefixes (0.00s)
+=== CONT  TestAccDataSourceSubnet_networkSecurityGroup
+=== CONT  TestAccDataSourceSubnet_serviceEndpoints
+=== CONT  TestAccVirtualNetwork_basic
 === NAME  TestAccSubnet_enforcePrivateLinkServiceNetworkPolicies
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== NAME  TestAccSubnet_enablePrivateLinkServiceNetworkPolicies
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccVirtualNetwork_withTags
-=== CONT  TestAccVirtualNetwork_disappears
-=== NAME  TestAccSubnet_privateLinkEndpointNetworkPoliciesValidateDefaultValues
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccDataSourceSubnet_networkSecurityGroup
---- SKIP: TestAccSubnet_serviceEndpoints (0.01s)
---- SKIP: TestAccSubnet_delegation (0.00s)
---- SKIP: TestAccVirtualNetwork_edgeZone (0.00s)
---- SKIP: TestAccSubnet_update_addressPrefixes (0.01s)
---- SKIP: TestAccVirtualNetwork_ddosProtectionPlan (0.00s)
---- SKIP: TestAccSubnet_PrivateLinkPoliciesToggleWithEnabledFirst (0.00s)
---- SKIP: TestAccVirtualNetwork_basic (0.00s)
---- SKIP: TestAccSubnet_updateServiceDelegation (0.00s)
---- SKIP: TestAccSubnet_updateAddressPrefix (0.00s)
---- SKIP: TestAccSubnet_enforcePrivateLinkEndpointNetworkPolicies (0.01s)
-=== NAME  TestAccVirtualNetwork_requiresImport
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
 --- SKIP: TestAccSubnet_enforcePrivateLinkServiceNetworkPolicies (0.00s)
---- SKIP: TestAccSubnet_enablePrivateLinkServiceNetworkPolicies (0.00s)
---- SKIP: TestAccSubnet_privateLinkEndpointNetworkPoliciesValidateDefaultValues (0.00s)
---- SKIP: TestAccVirtualNetwork_requiresImport (0.01s)
-=== NAME  TestAccVirtualNetwork_disappears
+=== CONT  TestAccDataSourceSubnet_routeTable
+=== NAME  TestAccVirtualNetwork_updateFlowTimeoutInMinutes
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
---- SKIP: TestAccVirtualNetwork_disappears (0.00s)
+=== CONT  TestAccSubnet_PrivateLinkPoliciesToggleWithEnabledFirst
 === NAME  TestAccDataSourceSubnet_networkSecurityGroup
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccDataSourceAzureRMSubnet_basic_addressPrefixes
+=== CONT  TestAccVirtualNetwork_withTags
+=== CONT  TestAccSubnet_enforcePrivateLinkEndpointNetworkPolicies
+=== CONT  TestAccSubnet_enablePrivateLinkServiceNetworkPolicies
+=== CONT  TestAccSubnet_enablePrivateEndpointNetworkPolicies
+=== CONT  TestAccSubnet_delegation
+=== CONT  TestAccSubnet_basic_addressPrefixes
+=== CONT  TestAccSubnet_basic
+=== NAME  TestAccSubnet_disappears
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccSubnet_updateAddressPrefix
+=== CONT  TestAccSubnet_updateServiceDelegation
+=== CONT  TestAccVirtualNetwork_complete
+=== CONT  TestAccVirtualNetwork_edgeZone
+=== CONT  TestAccVirtualNetwork_bgpCommunity
+--- SKIP: TestAccVirtualNetwork_updateFlowTimeoutInMinutes (0.00s)
 --- SKIP: TestAccDataSourceSubnet_networkSecurityGroup (0.00s)
+--- SKIP: TestAccSubnet_disappears (0.00s)
+=== CONT  TestAccVirtualNetwork_deleteSubnet
 === NAME  TestAccVirtualNetwork_withTags
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
 --- SKIP: TestAccVirtualNetwork_withTags (0.00s)
-=== NAME  TestAccVirtualNetwork_bgpCommunity
+=== NAME  TestAccSubnet_enablePrivateEndpointNetworkPolicies
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
---- SKIP: TestAccVirtualNetwork_bgpCommunity (0.01s)
-=== NAME  TestAccVirtualNetwork_deleteSubnet
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
---- SKIP: TestAccVirtualNetwork_deleteSubnet (0.01s)
+--- SKIP: TestAccSubnet_enablePrivateEndpointNetworkPolicies (0.00s)
 === CONT  TestAccSubnet_serviceEndpointPolicy
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccSubnet_serviceEndpointPolicy (0.00s)
+=== CONT  TestAccVirtualNetwork_ddosProtectionPlan
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccVirtualNetwork_ddosProtectionPlan (0.00s)
+=== CONT  TestAccVirtualNetwork_disappears
+=== CONT  TestAccSubnet_privateLinkEndpointNetworkPoliciesValidateDefaultValues
+=== NAME  TestAccVirtualNetwork_disappears
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccVirtualNetwork_disappears (0.00s)
+=== CONT  TestAccVirtualNetwork_requiresImport
+=== CONT  TestAccSubnet_PrivateLinkPoliciesToggleWithEnforceFirst
+=== NAME  TestAccDataSourceSubnet_routeTable
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== NAME  TestAccSubnet_enforcePrivateLinkEndpointNetworkPolicies
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== NAME  TestAccSubnet_privateLinkEndpointNetworkPoliciesValidateDefaultValues
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccSubnet_enforcePrivateLinkEndpointNetworkPolicies (0.01s)
+--- SKIP: TestAccSubnet_privateLinkEndpointNetworkPoliciesValidateDefaultValues (0.00s)
+=== NAME  TestAccDataSourceAzureRMSubnet_basic_addressPrefixes
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
 === NAME  TestAccDataSourceSubnet_serviceEndpoints
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
---- SKIP: TestAccDataSourceSubnet_serviceEndpoints (0.00s)
-=== NAME  TestAccSubnet_basic_addressPrefixes
+=== NAME  TestAccVirtualNetwork_deleteSubnet
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
---- SKIP: TestAccSubnet_basic_addressPrefixes (0.00s)
-=== NAME  TestAccVirtualNetwork_complete
+--- SKIP: TestAccDataSourceAzureRMSubnet_basic_addressPrefixes (0.01s)
+--- SKIP: TestAccVirtualNetwork_deleteSubnet (0.00s)
+--- SKIP: TestAccDataSourceSubnet_serviceEndpoints (0.01s)
+=== NAME  TestAccVirtualNetwork_requiresImport
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
---- SKIP: TestAccVirtualNetwork_complete (0.00s)
+--- SKIP: TestAccVirtualNetwork_requiresImport (0.00s)
+=== NAME  TestAccVirtualNetwork_basic
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== NAME  TestAccSubnet_enablePrivateLinkServiceNetworkPolicies
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccDataSourceSubnet_routeTable (0.00s)
+--- SKIP: TestAccVirtualNetwork_basic (0.01s)
+--- SKIP: TestAccSubnet_enablePrivateLinkServiceNetworkPolicies (0.01s)
+=== NAME  TestAccVirtualNetwork_basicUpdated
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccVirtualNetwork_basicUpdated (0.01s)
+=== NAME  TestAccSubnet_delegation
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccSubnet_delegation (0.00s)
 === NAME  TestAccSubnet_basic
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
 --- SKIP: TestAccSubnet_basic (0.00s)
-=== NAME  TestAccSubnet_serviceEndpointPolicy
+=== NAME  TestAccSubnet_PrivateLinkPoliciesToggleWithEnabledFirst
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
---- SKIP: TestAccSubnet_serviceEndpointPolicy (0.00s)
+--- SKIP: TestAccSubnet_PrivateLinkPoliciesToggleWithEnabledFirst (0.01s)
+=== NAME  TestAccSubnet_updateAddressPrefix
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccSubnet_updateAddressPrefix (0.00s)
+=== NAME  TestAccVirtualNetwork_edgeZone
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccVirtualNetwork_edgeZone (0.00s)
+=== NAME  TestAccSubnet_updateServiceDelegation
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccSubnet_updateServiceDelegation (0.00s)
+=== NAME  TestAccVirtualNetwork_complete
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccVirtualNetwork_complete (0.00s)
+=== NAME  TestAccSubnet_basic_addressPrefixes
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccSubnet_basic_addressPrefixes (0.00s)
+=== NAME  TestAccVirtualNetwork_bgpCommunity
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccVirtualNetwork_bgpCommunity (0.00s)
 === NAME  TestAccSubnet_PrivateLinkPoliciesToggleWithEnforceFirst
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
 --- SKIP: TestAccSubnet_PrivateLinkPoliciesToggleWithEnforceFirst (0.00s)
-=== NAME  TestAccVirtualNetwork_basicUpdated
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
---- SKIP: TestAccVirtualNetwork_basicUpdated (0.00s)
 PASS
-ok  	github.com/hashicorp/terraform-provider-azurerm/internal/services/network	0.126s
+ok  	github.com/hashicorp/terraform-provider-azurerm/internal/services/network	0.140s
 === RUN   TestSubnetServiceEndpointStoragePolicyIDFormatter
 --- PASS: TestSubnetServiceEndpointStoragePolicyIDFormatter (0.00s)
 === RUN   TestSubnetServiceEndpointStoragePolicyID
@@ -2672,93 +2633,93 @@ ok  	github.com/hashicorp/terraform-provider-azurerm/internal/services/network/v
 === CONT  TestAccResourceDeploymentScriptAzureCLI_basic
 === CONT  TestAccResourceGroup_requiresImport
 === CONT  TestAccResourceDeploymentScriptAzurePowerShell_complete
-=== CONT  TestAccDataSourceAzureRMResourceGroup_basic
+=== CONT  TestAccResourceProviderRegistration_feature
+=== NAME  TestAccResourceDeploymentScriptAzureCLI_basic
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccResourceGroup_disappears
+=== CONT  TestAccResourceDeploymentScriptAzurePowerShell_update
+=== CONT  TestAccDataSourceResources_ByResourceType
+--- SKIP: TestAccResourceDeploymentScriptAzureCLI_basic (0.00s)
+=== CONT  TestAccResourceProviderRegistration_requiresImport
+=== CONT  TestAccResourceProviderRegistration_basic
+=== NAME  TestAccResourceGroup_disappears
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccResourceGroup_withNestedItemsAndFeatureFlag
+=== NAME  TestAccResourceProviderRegistration_feature
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccResourceGroup_withTags
+=== NAME  TestAccResourceDeploymentScriptAzurePowerShell_update
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
 === NAME  TestAccResourceDeploymentScriptAzurePowerShell_complete
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccDataSourceResources_ByResourceGroup
-=== CONT  TestAccResourceDeploymentScriptAzureCLI_requiresImport
---- SKIP: TestAccResourceDeploymentScriptAzurePowerShell_complete (0.00s)
-=== CONT  TestAccResourceDeploymentScriptAzurePowerShell_basic
-=== CONT  TestAccResourceProviderRegistration_requiresImport
-=== CONT  TestAccResourceGroup_withTags
+=== CONT  TestAccResourceGroup_basic
+=== CONT  TestAccDataSourceAzureRMResourceGroup_basic
+=== CONT  TestAccResourceDeploymentScriptAzurePowerShell_scriptUri
+=== CONT  TestAccResourceDeploymentScriptAzurePowerShell_requiresImport
 === NAME  TestAccDataSourceAzureRMResourceGroup_basic
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
---- SKIP: TestAccDataSourceAzureRMResourceGroup_basic (0.00s)
-=== CONT  TestAccResourceDeploymentScriptAzureCLI_update
-=== CONT  TestAccResourceGroup_withNestedItemsAndFeatureFlag
-=== NAME  TestAccResourceProviderRegistration_requiresImport
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== NAME  TestAccResourceDeploymentScriptAzureCLI_requiresImport
+=== CONT  TestAccResourceDeploymentScriptAzurePowerShell_basic
+=== NAME  TestAccResourceDeploymentScriptAzurePowerShell_scriptUri
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
 === NAME  TestAccResourceGroup_withNestedItemsAndFeatureFlag
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== NAME  TestAccResourceDeploymentScriptAzureCLI_basic
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== CONT  TestAccResourceDeploymentScriptAzureCLI_update
 === CONT  TestAccResourceDeploymentScriptAzureCLI_complete
-=== CONT  TestAccDataSourceResources_ByResourceType
-=== NAME  TestAccResourceDeploymentScriptAzurePowerShell_basic
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccResourceDeploymentScriptAzurePowerShell_requiresImport
+=== CONT  TestAccResourceDeploymentScriptAzureCLI_requiresImport
+=== CONT  TestAccDataSourceResources_FilteredByTags
+=== CONT  TestAccDataSourceResources_ByResourceGroup
 === NAME  TestAccResourceGroup_requiresImport
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccResourceDeploymentScriptAzurePowerShell_scriptUri
-=== CONT  TestAccResourceDeploymentScriptAzurePowerShell_update
-=== NAME  TestAccResourceDeploymentScriptAzureCLI_complete
+--- SKIP: TestAccResourceGroup_disappears (0.00s)
+=== NAME  TestAccResourceProviderRegistration_requiresImport
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccResourceGroup_basic
-=== NAME  TestAccResourceDeploymentScriptAzurePowerShell_scriptUri
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== CONT  TestAccResourceProviderRegistration_basic
 === CONT  TestAccDataSourceResources_ByName
-=== CONT  TestAccResourceProviderRegistration_feature
-=== CONT  TestAccDataSourceResources_FilteredByTags
-=== CONT  TestAccResourceGroup_disappears
-=== NAME  TestAccDataSourceResources_ByResourceGroup
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
---- SKIP: TestAccResourceProviderRegistration_requiresImport (0.00s)
 === NAME  TestAccResourceGroup_withTags
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== NAME  TestAccResourceDeploymentScriptAzureCLI_update
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== NAME  TestAccResourceDeploymentScriptAzurePowerShell_requiresImport
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
---- SKIP: TestAccResourceDeploymentScriptAzureCLI_requiresImport (0.00s)
---- SKIP: TestAccResourceGroup_withNestedItemsAndFeatureFlag (0.00s)
---- SKIP: TestAccResourceDeploymentScriptAzureCLI_basic (0.00s)
---- SKIP: TestAccResourceDeploymentScriptAzurePowerShell_basic (0.00s)
-=== NAME  TestAccResourceDeploymentScriptAzurePowerShell_update
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
---- SKIP: TestAccResourceGroup_requiresImport (0.00s)
---- SKIP: TestAccResourceDeploymentScriptAzureCLI_complete (0.00s)
---- SKIP: TestAccResourceDeploymentScriptAzurePowerShell_scriptUri (0.00s)
---- SKIP: TestAccResourceGroup_withTags (0.00s)
---- SKIP: TestAccResourceDeploymentScriptAzureCLI_update (0.00s)
---- SKIP: TestAccDataSourceResources_ByResourceGroup (0.00s)
---- SKIP: TestAccResourceDeploymentScriptAzurePowerShell_requiresImport (0.00s)
---- SKIP: TestAccResourceDeploymentScriptAzurePowerShell_update (0.00s)
 === NAME  TestAccDataSourceResources_ByResourceType
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
---- SKIP: TestAccDataSourceResources_ByResourceType (0.00s)
-=== NAME  TestAccResourceProviderRegistration_feature
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
---- SKIP: TestAccResourceProviderRegistration_feature (0.00s)
-=== NAME  TestAccDataSourceResources_ByName
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
---- SKIP: TestAccDataSourceResources_ByName (0.00s)
 === NAME  TestAccResourceGroup_basic
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== NAME  TestAccDataSourceResources_FilteredByTags
-    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
-=== NAME  TestAccResourceGroup_disappears
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
 === NAME  TestAccResourceProviderRegistration_basic
     testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== NAME  TestAccResourceDeploymentScriptAzurePowerShell_basic
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccResourceProviderRegistration_feature (0.00s)
+--- SKIP: TestAccResourceDeploymentScriptAzurePowerShell_update (0.00s)
+--- SKIP: TestAccResourceDeploymentScriptAzurePowerShell_complete (0.00s)
+--- SKIP: TestAccDataSourceAzureRMResourceGroup_basic (0.00s)
+--- SKIP: TestAccResourceDeploymentScriptAzurePowerShell_scriptUri (0.00s)
+--- SKIP: TestAccResourceGroup_withNestedItemsAndFeatureFlag (0.00s)
+--- SKIP: TestAccDataSourceResources_ByResourceType (0.00s)
 --- SKIP: TestAccResourceGroup_basic (0.00s)
---- SKIP: TestAccDataSourceResources_FilteredByTags (0.00s)
---- SKIP: TestAccResourceGroup_disappears (0.00s)
 --- SKIP: TestAccResourceProviderRegistration_basic (0.00s)
+--- SKIP: TestAccResourceProviderRegistration_requiresImport (0.00s)
+=== NAME  TestAccResourceDeploymentScriptAzureCLI_update
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccResourceGroup_withTags (0.00s)
+--- SKIP: TestAccResourceDeploymentScriptAzureCLI_update (0.00s)
+=== NAME  TestAccResourceDeploymentScriptAzureCLI_requiresImport
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccResourceGroup_requiresImport (0.00s)
+=== NAME  TestAccResourceDeploymentScriptAzurePowerShell_requiresImport
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccResourceDeploymentScriptAzureCLI_requiresImport (0.00s)
+--- SKIP: TestAccResourceDeploymentScriptAzurePowerShell_requiresImport (0.00s)
+=== NAME  TestAccDataSourceResources_ByName
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+=== NAME  TestAccResourceDeploymentScriptAzureCLI_complete
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccDataSourceResources_ByName (0.00s)
+--- SKIP: TestAccResourceDeploymentScriptAzurePowerShell_basic (0.00s)
+--- SKIP: TestAccResourceDeploymentScriptAzureCLI_complete (0.00s)
+=== NAME  TestAccDataSourceResources_FilteredByTags
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccDataSourceResources_FilteredByTags (0.00s)
+=== NAME  TestAccDataSourceResources_ByResourceGroup
+    testcase.go:110: Acceptance tests skipped unless env 'TF_ACC' set
+--- SKIP: TestAccDataSourceResources_ByResourceGroup (0.00s)
 PASS
-ok  	github.com/hashicorp/terraform-provider-azurerm/internal/services/resource	0.117s
+ok  	github.com/hashicorp/terraform-provider-azurerm/internal/services/resource	0.120s
 === RUN   TestFeatureIDFormatter
 --- PASS: TestFeatureIDFormatter (0.00s)
 === RUN   TestFeatureID
@@ -3218,14 +3179,40 @@ ok  	github.com/hashicorp/terraform-provider-azurerm/internal/services/storage/m
 PASS
 ok  	github.com/hashicorp/terraform-provider-azurerm/internal/services/storage/parse	(cached)
 ?   	github.com/hashicorp/terraform-provider-azurerm/internal/tf/base64	[no test files]
-?   	github.com/hashicorp/terraform-provider-azurerm/internal/tf/pluginsdk	[no test files]
 ?   	github.com/hashicorp/terraform-provider-azurerm/internal/tf/set	[no test files]
 ?   	github.com/hashicorp/terraform-provider-azurerm/internal/tf/state	[no test files]
+?   	github.com/hashicorp/terraform-provider-azurerm/internal/tf/pluginsdk	[no test files]
 ?   	github.com/hashicorp/terraform-provider-azurerm/internal/tf/validation	[no test files]
 ?   	github.com/hashicorp/terraform-provider-azurerm/internal/timeouts	[no test files]
 ?   	github.com/hashicorp/terraform-provider-azurerm/internal/tools/generator-schema-snapshot	[no test files]
 ?   	github.com/hashicorp/terraform-provider-azurerm/internal/tools/generator-services	[no test files]
 ?   	github.com/hashicorp/terraform-provider-azurerm/internal/tools/generator-typed-model	[no test files]
+=== RUN   TestBlobInventoryPolicyID
+    blob_inventory_policy_id_test.go:80: [DEBUG] Testing Value 
+    blob_inventory_policy_id_test.go:80: [DEBUG] Testing Value /
+    blob_inventory_policy_id_test.go:80: [DEBUG] Testing Value /subscriptions/
+    blob_inventory_policy_id_test.go:80: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/
+    blob_inventory_policy_id_test.go:80: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/
+    blob_inventory_policy_id_test.go:80: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.Storage/
+    blob_inventory_policy_id_test.go:80: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.Storage/storageAccounts/
+    blob_inventory_policy_id_test.go:80: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.Storage/storageAccounts/storageAccount1/
+    blob_inventory_policy_id_test.go:80: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.Storage/storageAccounts/storageAccount1/inventoryPolicies/
+    blob_inventory_policy_id_test.go:80: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.Storage/storageAccounts/storageAccount1/inventoryPolicies/inventoryPolicy1
+    blob_inventory_policy_id_test.go:80: [DEBUG] Testing Value /SUBSCRIPTIONS/12345678-1234-9876-4563-123456789012/RESOURCEGROUPS/RESGROUP1/PROVIDERS/MICROSOFT.STORAGE/STORAGEACCOUNTS/STORAGEACCOUNT1/INVENTORYPOLICIES/INVENTORYPOLICY1
+--- PASS: TestBlobInventoryPolicyID (0.00s)
+=== RUN   TestEncryptionScopeID
+    encryption_scope_id_test.go:80: [DEBUG] Testing Value 
+    encryption_scope_id_test.go:80: [DEBUG] Testing Value /
+    encryption_scope_id_test.go:80: [DEBUG] Testing Value /subscriptions/
+    encryption_scope_id_test.go:80: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/
+    encryption_scope_id_test.go:80: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/
+    encryption_scope_id_test.go:80: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.Storage/
+    encryption_scope_id_test.go:80: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.Storage/storageAccounts/
+    encryption_scope_id_test.go:80: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.Storage/storageAccounts/storageAccount1/
+    encryption_scope_id_test.go:80: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.Storage/storageAccounts/storageAccount1/encryptionScopes/
+    encryption_scope_id_test.go:80: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.Storage/storageAccounts/storageAccount1/encryptionScopes/encryptionScope1
+    encryption_scope_id_test.go:80: [DEBUG] Testing Value /SUBSCRIPTIONS/12345678-1234-9876-4563-123456789012/RESOURCEGROUPS/RESGROUP1/PROVIDERS/MICROSOFT.STORAGE/STORAGEACCOUNTS/STORAGEACCOUNT1/ENCRYPTIONSCOPES/ENCRYPTIONSCOPE1
+--- PASS: TestEncryptionScopeID (0.00s)
 === RUN   TestMetaDataKeys
     metadata_keys_test.go:48: [DEBUG] Testing ""
     metadata_keys_test.go:48: [DEBUG] Testing "Hello"
@@ -3236,6 +3223,19 @@ ok  	github.com/hashicorp/terraform-provider-azurerm/internal/services/storage/p
     metadata_keys_test.go:48: [DEBUG] Testing "heLLo"
     metadata_keys_test.go:48: [DEBUG] Testing "panda_cycle"
 --- PASS: TestMetaDataKeys (0.00s)
+=== RUN   TestStorageAccountDefaultBlobID
+    storage_account_default_blob_id_test.go:80: [DEBUG] Testing Value 
+    storage_account_default_blob_id_test.go:80: [DEBUG] Testing Value /
+    storage_account_default_blob_id_test.go:80: [DEBUG] Testing Value /subscriptions/
+    storage_account_default_blob_id_test.go:80: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/
+    storage_account_default_blob_id_test.go:80: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/
+    storage_account_default_blob_id_test.go:80: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.Storage/
+    storage_account_default_blob_id_test.go:80: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.Storage/storageAccounts/
+    storage_account_default_blob_id_test.go:80: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.Storage/storageAccounts/storageAccount1/
+    storage_account_default_blob_id_test.go:80: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.Storage/storageAccounts/storageAccount1/blobServices/
+    storage_account_default_blob_id_test.go:80: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.Storage/storageAccounts/storageAccount1/blobServices/default
+    storage_account_default_blob_id_test.go:80: [DEBUG] Testing Value /SUBSCRIPTIONS/12345678-1234-9876-4563-123456789012/RESOURCEGROUPS/RESGROUP1/PROVIDERS/MICROSOFT.STORAGE/STORAGEACCOUNTS/STORAGEACCOUNT1/BLOBSERVICES/DEFAULT
+--- PASS: TestStorageAccountDefaultBlobID (0.00s)
 === RUN   TestStorageAccountID
     storage_account_id_test.go:68: [DEBUG] Testing Value 
     storage_account_id_test.go:68: [DEBUG] Testing Value /
@@ -3247,8 +3247,105 @@ ok  	github.com/hashicorp/terraform-provider-azurerm/internal/services/storage/p
     storage_account_id_test.go:68: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.Storage/storageAccounts/storageAccount1
     storage_account_id_test.go:68: [DEBUG] Testing Value /SUBSCRIPTIONS/12345678-1234-9876-4563-123456789012/RESOURCEGROUPS/RESGROUP1/PROVIDERS/MICROSOFT.STORAGE/STORAGEACCOUNTS/STORAGEACCOUNT1
 --- PASS: TestStorageAccountID (0.00s)
+=== RUN   TestStorageAccountManagementPolicyID
+    storage_account_management_policy_id_test.go:80: [DEBUG] Testing Value 
+    storage_account_management_policy_id_test.go:80: [DEBUG] Testing Value /
+    storage_account_management_policy_id_test.go:80: [DEBUG] Testing Value /subscriptions/
+    storage_account_management_policy_id_test.go:80: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/
+    storage_account_management_policy_id_test.go:80: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/
+    storage_account_management_policy_id_test.go:80: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.Storage/
+    storage_account_management_policy_id_test.go:80: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.Storage/storageAccounts/
+    storage_account_management_policy_id_test.go:80: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.Storage/storageAccounts/storageAccount1/
+    storage_account_management_policy_id_test.go:80: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.Storage/storageAccounts/storageAccount1/managementPolicies/
+    storage_account_management_policy_id_test.go:80: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.Storage/storageAccounts/storageAccount1/managementPolicies/policy1
+    storage_account_management_policy_id_test.go:80: [DEBUG] Testing Value /SUBSCRIPTIONS/12345678-1234-9876-4563-123456789012/RESOURCEGROUPS/RESGROUP1/PROVIDERS/MICROSOFT.STORAGE/STORAGEACCOUNTS/STORAGEACCOUNT1/MANAGEMENTPOLICIES/POLICY1
+--- PASS: TestStorageAccountManagementPolicyID (0.00s)
+=== RUN   TestStorageContainerResourceManagerID
+    storage_container_resource_manager_id_test.go:92: [DEBUG] Testing Value 
+    storage_container_resource_manager_id_test.go:92: [DEBUG] Testing Value /
+    storage_container_resource_manager_id_test.go:92: [DEBUG] Testing Value /subscriptions/
+    storage_container_resource_manager_id_test.go:92: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/
+    storage_container_resource_manager_id_test.go:92: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/
+    storage_container_resource_manager_id_test.go:92: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.Storage/
+    storage_container_resource_manager_id_test.go:92: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.Storage/storageAccounts/
+    storage_container_resource_manager_id_test.go:92: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.Storage/storageAccounts/storageAccount1/
+    storage_container_resource_manager_id_test.go:92: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.Storage/storageAccounts/storageAccount1/blobServices/
+    storage_container_resource_manager_id_test.go:92: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.Storage/storageAccounts/storageAccount1/blobServices/default/
+    storage_container_resource_manager_id_test.go:92: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.Storage/storageAccounts/storageAccount1/blobServices/default/containers/
+    storage_container_resource_manager_id_test.go:92: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.Storage/storageAccounts/storageAccount1/blobServices/default/containers/container1
+    storage_container_resource_manager_id_test.go:92: [DEBUG] Testing Value /SUBSCRIPTIONS/12345678-1234-9876-4563-123456789012/RESOURCEGROUPS/RESGROUP1/PROVIDERS/MICROSOFT.STORAGE/STORAGEACCOUNTS/STORAGEACCOUNT1/BLOBSERVICES/DEFAULT/CONTAINERS/CONTAINER1
+--- PASS: TestStorageContainerResourceManagerID (0.00s)
+=== RUN   TestStorageQueueResourceManagerID
+    storage_queue_resource_manager_id_test.go:92: [DEBUG] Testing Value 
+    storage_queue_resource_manager_id_test.go:92: [DEBUG] Testing Value /
+    storage_queue_resource_manager_id_test.go:92: [DEBUG] Testing Value /subscriptions/
+    storage_queue_resource_manager_id_test.go:92: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/
+    storage_queue_resource_manager_id_test.go:92: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/
+    storage_queue_resource_manager_id_test.go:92: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.Storage/
+    storage_queue_resource_manager_id_test.go:92: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.Storage/storageAccounts/
+    storage_queue_resource_manager_id_test.go:92: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.Storage/storageAccounts/storageAccount1/
+    storage_queue_resource_manager_id_test.go:92: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.Storage/storageAccounts/storageAccount1/queueServices/
+    storage_queue_resource_manager_id_test.go:92: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.Storage/storageAccounts/storageAccount1/queueServices/default/
+    storage_queue_resource_manager_id_test.go:92: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.Storage/storageAccounts/storageAccount1/queueServices/default/queues/
+    storage_queue_resource_manager_id_test.go:92: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.Storage/storageAccounts/storageAccount1/queueServices/default/queues/queue1
+    storage_queue_resource_manager_id_test.go:92: [DEBUG] Testing Value /SUBSCRIPTIONS/12345678-1234-9876-4563-123456789012/RESOURCEGROUPS/RESGROUP1/PROVIDERS/MICROSOFT.STORAGE/STORAGEACCOUNTS/STORAGEACCOUNT1/QUEUESERVICES/DEFAULT/QUEUES/QUEUE1
+--- PASS: TestStorageQueueResourceManagerID (0.00s)
+=== RUN   TestStorageShareResourceManagerID
+    storage_share_resource_manager_id_test.go:92: [DEBUG] Testing Value 
+    storage_share_resource_manager_id_test.go:92: [DEBUG] Testing Value /
+    storage_share_resource_manager_id_test.go:92: [DEBUG] Testing Value /subscriptions/
+    storage_share_resource_manager_id_test.go:92: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/
+    storage_share_resource_manager_id_test.go:92: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/
+    storage_share_resource_manager_id_test.go:92: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.Storage/
+    storage_share_resource_manager_id_test.go:92: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.Storage/storageAccounts/
+    storage_share_resource_manager_id_test.go:92: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.Storage/storageAccounts/storageAccount1/
+    storage_share_resource_manager_id_test.go:92: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.Storage/storageAccounts/storageAccount1/fileServices/
+    storage_share_resource_manager_id_test.go:92: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.Storage/storageAccounts/storageAccount1/fileServices/fileService1/
+    storage_share_resource_manager_id_test.go:92: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.Storage/storageAccounts/storageAccount1/fileServices/fileService1/fileshares/
+    storage_share_resource_manager_id_test.go:92: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.Storage/storageAccounts/storageAccount1/fileServices/fileService1/fileshares/share1
+    storage_share_resource_manager_id_test.go:92: [DEBUG] Testing Value /SUBSCRIPTIONS/12345678-1234-9876-4563-123456789012/RESOURCEGROUPS/RESGROUP1/PROVIDERS/MICROSOFT.STORAGE/STORAGEACCOUNTS/STORAGEACCOUNT1/FILESERVICES/FILESERVICE1/FILESHARES/SHARE1
+--- PASS: TestStorageShareResourceManagerID (0.00s)
+=== RUN   TestStorageSyncCloudEndpointID
+    storage_sync_cloud_endpoint_id_test.go:92: [DEBUG] Testing Value 
+    storage_sync_cloud_endpoint_id_test.go:92: [DEBUG] Testing Value /
+    storage_sync_cloud_endpoint_id_test.go:92: [DEBUG] Testing Value /subscriptions/
+    storage_sync_cloud_endpoint_id_test.go:92: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/
+    storage_sync_cloud_endpoint_id_test.go:92: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/
+    storage_sync_cloud_endpoint_id_test.go:92: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.StorageSync/
+    storage_sync_cloud_endpoint_id_test.go:92: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.StorageSync/storageSyncServices/
+    storage_sync_cloud_endpoint_id_test.go:92: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.StorageSync/storageSyncServices/storageSyncService1/
+    storage_sync_cloud_endpoint_id_test.go:92: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.StorageSync/storageSyncServices/storageSyncService1/syncGroups/
+    storage_sync_cloud_endpoint_id_test.go:92: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.StorageSync/storageSyncServices/storageSyncService1/syncGroups/syncGroup1/
+    storage_sync_cloud_endpoint_id_test.go:92: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.StorageSync/storageSyncServices/storageSyncService1/syncGroups/syncGroup1/cloudEndpoints/
+    storage_sync_cloud_endpoint_id_test.go:92: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.StorageSync/storageSyncServices/storageSyncService1/syncGroups/syncGroup1/cloudEndpoints/cloudEndpoint1
+    storage_sync_cloud_endpoint_id_test.go:92: [DEBUG] Testing Value /SUBSCRIPTIONS/12345678-1234-9876-4563-123456789012/RESOURCEGROUPS/RESGROUP1/PROVIDERS/MICROSOFT.STORAGESYNC/STORAGESYNCSERVICES/STORAGESYNCSERVICE1/SYNCGROUPS/SYNCGROUP1/CLOUDENDPOINTS/CLOUDENDPOINT1
+--- PASS: TestStorageSyncCloudEndpointID (0.00s)
+=== RUN   TestStorageSyncGroupID
+    storage_sync_group_id_test.go:80: [DEBUG] Testing Value 
+    storage_sync_group_id_test.go:80: [DEBUG] Testing Value /
+    storage_sync_group_id_test.go:80: [DEBUG] Testing Value /subscriptions/
+    storage_sync_group_id_test.go:80: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/
+    storage_sync_group_id_test.go:80: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/
+    storage_sync_group_id_test.go:80: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.StorageSync/
+    storage_sync_group_id_test.go:80: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.StorageSync/storageSyncServices/
+    storage_sync_group_id_test.go:80: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.StorageSync/storageSyncServices/storageSyncService1/
+    storage_sync_group_id_test.go:80: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.StorageSync/storageSyncServices/storageSyncService1/syncGroups/
+    storage_sync_group_id_test.go:80: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.StorageSync/storageSyncServices/storageSyncService1/syncGroups/syncGroup1
+    storage_sync_group_id_test.go:80: [DEBUG] Testing Value /SUBSCRIPTIONS/12345678-1234-9876-4563-123456789012/RESOURCEGROUPS/RESGROUP1/PROVIDERS/MICROSOFT.STORAGESYNC/STORAGESYNCSERVICES/STORAGESYNCSERVICE1/SYNCGROUPS/SYNCGROUP1
+--- PASS: TestStorageSyncGroupID (0.00s)
+=== RUN   TestStorageSyncServiceID
+    storage_sync_service_id_test.go:68: [DEBUG] Testing Value 
+    storage_sync_service_id_test.go:68: [DEBUG] Testing Value /
+    storage_sync_service_id_test.go:68: [DEBUG] Testing Value /subscriptions/
+    storage_sync_service_id_test.go:68: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/
+    storage_sync_service_id_test.go:68: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/
+    storage_sync_service_id_test.go:68: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.StorageSync/
+    storage_sync_service_id_test.go:68: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.StorageSync/storageSyncServices/
+    storage_sync_service_id_test.go:68: [DEBUG] Testing Value /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.StorageSync/storageSyncServices/storageSyncService1
+    storage_sync_service_id_test.go:68: [DEBUG] Testing Value /SUBSCRIPTIONS/12345678-1234-9876-4563-123456789012/RESOURCEGROUPS/RESGROUP1/PROVIDERS/MICROSOFT.STORAGESYNC/STORAGESYNCSERVICES/STORAGESYNCSERVICE1
+--- PASS: TestStorageSyncServiceID (0.00s)
 PASS
-ok  	github.com/hashicorp/terraform-provider-azurerm/internal/services/storage/validate	0.391s
+ok  	github.com/hashicorp/terraform-provider-azurerm/internal/services/storage/validate	0.497s
 === RUN   TestExpand
 --- PASS: TestExpand (0.00s)
 === RUN   TestFilter
@@ -3354,11 +3451,11 @@ ok  	github.com/hashicorp/terraform-provider-azurerm/internal/tools/generator-re
 === RUN   TestPropertyTypeMatches_Check
 --- PASS: TestPropertyTypeMatches_Check (0.00s)
 PASS
-ok  	github.com/hashicorp/terraform-provider-azurerm/internal/tools/schema-api/schema-rules	0.455s
+ok  	github.com/hashicorp/terraform-provider-azurerm/internal/tools/schema-api/schema-rules	0.509s
 === RUN   TestResourceArgumentBlock
 --- PASS: TestResourceArgumentBlock (0.00s)
 PASS
-ok  	github.com/hashicorp/terraform-provider-azurerm/internal/tools/website-scaffold	0.484s
+ok  	github.com/hashicorp/terraform-provider-azurerm/internal/tools/website-scaffold	0.400s
 === RUN   TestResponseNotFound_DroppedConnection
 --- PASS: TestResponseNotFound_DroppedConnection (0.00s)
 === RUN   TestResponseNotFound_StatusCodes
