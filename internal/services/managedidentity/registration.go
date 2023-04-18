@@ -28,9 +28,7 @@ func (r Registration) DataSources() []sdk.DataSource {
 }
 
 func (r Registration) Resources() []sdk.Resource {
-	resources := []sdk.Resource{
-		FederatedIdentityCredentialResource{},
-	}
+	resources := []sdk.Resource{}
 	resources = append(resources, r.autoRegistration.Resources()...)
 	return resources
 }
