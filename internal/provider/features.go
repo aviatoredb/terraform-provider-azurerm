@@ -13,73 +13,16 @@ func schemaFeatures(supportLegacyTestSuite bool) *pluginsdk.Schema {
 	//       specifying the block otherwise) - however for 2+ they should be optional
 	featuresMap := map[string]*pluginsdk.Schema{
 		//lintignore:XS003
-		"api_management": {
+
+		"template_deployment": {
 			Type:     pluginsdk.TypeList,
 			Optional: true,
 			MaxItems: 1,
 			Elem: &pluginsdk.Resource{
 				Schema: map[string]*pluginsdk.Schema{
-					"purge_soft_delete_on_destroy": {
+					"delete_nested_items_during_deletion": {
 						Type:     pluginsdk.TypeBool,
-						Optional: true,
-						Default:  true,
-					},
-
-					"recover_soft_deleted": {
-						Type:     pluginsdk.TypeBool,
-						Optional: true,
-						Default:  true,
-					},
-				},
-			},
-		},
-
-		"app_configuration": {
-			Type:     pluginsdk.TypeList,
-			Optional: true,
-			MaxItems: 1,
-			Elem: &pluginsdk.Resource{
-				Schema: map[string]*pluginsdk.Schema{
-					"purge_soft_delete_on_destroy": {
-						Type:     pluginsdk.TypeBool,
-						Optional: true,
-						Default:  true,
-					},
-
-					"recover_soft_deleted": {
-						Type:     pluginsdk.TypeBool,
-						Optional: true,
-						Default:  true,
-					},
-				},
-			},
-		},
-
-		"application_insights": {
-			Type:     pluginsdk.TypeList,
-			Optional: true,
-			MaxItems: 1,
-			Elem: &pluginsdk.Resource{
-				Schema: map[string]*pluginsdk.Schema{
-					"disable_generated_rule": {
-						Type:     pluginsdk.TypeBool,
-						Optional: true,
-						Default:  false,
-					},
-				},
-			},
-		},
-
-		"cognitive_account": {
-			Type:     pluginsdk.TypeList,
-			Optional: true,
-			MaxItems: 1,
-			Elem: &pluginsdk.Resource{
-				Schema: map[string]*pluginsdk.Schema{
-					"purge_soft_delete_on_destroy": {
-						Type:     pluginsdk.TypeBool,
-						Optional: true,
-						Default:  true,
+						Required: true,
 					},
 				},
 			},
@@ -157,99 +100,6 @@ func schemaFeatures(supportLegacyTestSuite bool) *pluginsdk.Schema {
 			},
 		},
 
-		"log_analytics_workspace": {
-			Type:     pluginsdk.TypeList,
-			Optional: true,
-			MaxItems: 1,
-			Elem: &pluginsdk.Resource{
-				Schema: map[string]*pluginsdk.Schema{
-					"permanently_delete_on_destroy": {
-						Type:     pluginsdk.TypeBool,
-						Optional: true,
-						Default:  !features.FourPointOhBeta(),
-					},
-				},
-			},
-		},
-
-		"network": {
-			Type:     pluginsdk.TypeList,
-			Optional: true,
-			MaxItems: 1,
-			Elem: &pluginsdk.Resource{
-				Schema: map[string]*pluginsdk.Schema{
-					"relaxed_locking": {
-						Type:     pluginsdk.TypeBool,
-						Required: true,
-					},
-				},
-			},
-		},
-
-		"template_deployment": {
-			Type:     pluginsdk.TypeList,
-			Optional: true,
-			MaxItems: 1,
-			Elem: &pluginsdk.Resource{
-				Schema: map[string]*pluginsdk.Schema{
-					"delete_nested_items_during_deletion": {
-						Type:     pluginsdk.TypeBool,
-						Required: true,
-					},
-				},
-			},
-		},
-
-		//lintignore:XS003
-		"virtual_machine": {
-			Type:     pluginsdk.TypeList,
-			Optional: true,
-			MaxItems: 1,
-			Elem: &pluginsdk.Resource{
-				Schema: map[string]*pluginsdk.Schema{
-					"delete_os_disk_on_deletion": {
-						Type:     pluginsdk.TypeBool,
-						Optional: true,
-						Default:  false,
-					},
-					"graceful_shutdown": {
-						Type:     pluginsdk.TypeBool,
-						Optional: true,
-						Default:  false,
-					},
-					"skip_shutdown_and_force_delete": {
-						Type:     schema.TypeBool,
-						Optional: true,
-						Default:  false,
-					},
-				},
-			},
-		},
-
-		"virtual_machine_scale_set": {
-			Type:     pluginsdk.TypeList,
-			Optional: true,
-			MaxItems: 1,
-			Elem: &pluginsdk.Resource{
-				Schema: map[string]*pluginsdk.Schema{
-					"force_delete": {
-						Type:     pluginsdk.TypeBool,
-						Optional: true,
-						Default:  false,
-					},
-					"roll_instances_when_required": {
-						Type:     pluginsdk.TypeBool,
-						Required: true,
-					},
-					"scale_to_zero_before_deletion": {
-						Type:     pluginsdk.TypeBool,
-						Optional: true,
-						Default:  false,
-					},
-				},
-			},
-		},
-
 		"resource_group": {
 			Type:     pluginsdk.TypeList,
 			Optional: true,
@@ -260,21 +110,6 @@ func schemaFeatures(supportLegacyTestSuite bool) *pluginsdk.Schema {
 						Type:     pluginsdk.TypeBool,
 						Optional: true,
 						Default:  os.Getenv("TF_ACC") == "",
-					},
-				},
-			},
-		},
-
-		"managed_disk": {
-			Type:     pluginsdk.TypeList,
-			Optional: true,
-			MaxItems: 1,
-			Elem: &pluginsdk.Resource{
-				Schema: map[string]*pluginsdk.Schema{
-					"expand_without_downtime": {
-						Type:     pluginsdk.TypeBool,
-						Optional: true,
-						Default:  true,
 					},
 				},
 			},
@@ -314,52 +149,6 @@ func expandFeatures(input []interface{}) features.UserFeatures {
 
 	val := input[0].(map[string]interface{})
 
-	if raw, ok := val["api_management"]; ok {
-		items := raw.([]interface{})
-		if len(items) > 0 && items[0] != nil {
-			apimRaw := items[0].(map[string]interface{})
-			if v, ok := apimRaw["purge_soft_delete_on_destroy"]; ok {
-				featuresMap.ApiManagement.PurgeSoftDeleteOnDestroy = v.(bool)
-			}
-			if v, ok := apimRaw["recover_soft_deleted"]; ok {
-				featuresMap.ApiManagement.RecoverSoftDeleted = v.(bool)
-			}
-		}
-	}
-
-	if raw, ok := val["app_configuration"]; ok {
-		items := raw.([]interface{})
-		if len(items) > 0 && items[0] != nil {
-			appConfRaw := items[0].(map[string]interface{})
-			if v, ok := appConfRaw["purge_soft_delete_on_destroy"]; ok {
-				featuresMap.AppConfiguration.PurgeSoftDeleteOnDestroy = v.(bool)
-			}
-			if v, ok := appConfRaw["recover_soft_deleted"]; ok {
-				featuresMap.AppConfiguration.RecoverSoftDeleted = v.(bool)
-			}
-		}
-	}
-
-	if raw, ok := val["application_insights"]; ok {
-		items := raw.([]interface{})
-		if len(items) > 0 && items[0] != nil {
-			applicationInsightsRaw := items[0].(map[string]interface{})
-			if v, ok := applicationInsightsRaw["disable_generated_rule"]; ok {
-				featuresMap.ApplicationInsights.DisableGeneratedRule = v.(bool)
-			}
-		}
-	}
-
-	if raw, ok := val["cognitive_account"]; ok {
-		items := raw.([]interface{})
-		if len(items) > 0 && items[0] != nil {
-			cognitiveRaw := items[0].(map[string]interface{})
-			if v, ok := cognitiveRaw["purge_soft_delete_on_destroy"]; ok {
-				featuresMap.CognitiveAccount.PurgeSoftDeleteOnDestroy = v.(bool)
-			}
-		}
-	}
-
 	if raw, ok := val["key_vault"]; ok {
 		items := raw.([]interface{})
 		if len(items) > 0 && items[0] != nil {
@@ -394,16 +183,6 @@ func expandFeatures(input []interface{}) features.UserFeatures {
 		}
 	}
 
-	if raw, ok := val["log_analytics_workspace"]; ok {
-		items := raw.([]interface{})
-		if len(items) > 0 {
-			logAnalyticsWorkspaceRaw := items[0].(map[string]interface{})
-			if v, ok := logAnalyticsWorkspaceRaw["permanently_delete_on_destroy"]; ok {
-				featuresMap.LogAnalyticsWorkspace.PermanentlyDeleteOnDestroy = v.(bool)
-			}
-		}
-	}
-
 	if raw, ok := val["template_deployment"]; ok {
 		items := raw.([]interface{})
 		if len(items) > 0 {
@@ -414,54 +193,12 @@ func expandFeatures(input []interface{}) features.UserFeatures {
 		}
 	}
 
-	if raw, ok := val["virtual_machine"]; ok {
-		items := raw.([]interface{})
-		if len(items) > 0 && items[0] != nil {
-			virtualMachinesRaw := items[0].(map[string]interface{})
-			if v, ok := virtualMachinesRaw["delete_os_disk_on_deletion"]; ok {
-				featuresMap.VirtualMachine.DeleteOSDiskOnDeletion = v.(bool)
-			}
-			if v, ok := virtualMachinesRaw["graceful_shutdown"]; ok {
-				featuresMap.VirtualMachine.GracefulShutdown = v.(bool)
-			}
-			if v, ok := virtualMachinesRaw["skip_shutdown_and_force_delete"]; ok {
-				featuresMap.VirtualMachine.SkipShutdownAndForceDelete = v.(bool)
-			}
-		}
-	}
-
-	if raw, ok := val["virtual_machine_scale_set"]; ok {
-		items := raw.([]interface{})
-		if len(items) > 0 {
-			scaleSetRaw := items[0].(map[string]interface{})
-			if v, ok := scaleSetRaw["roll_instances_when_required"]; ok {
-				featuresMap.VirtualMachineScaleSet.RollInstancesWhenRequired = v.(bool)
-			}
-			if v, ok := scaleSetRaw["force_delete"]; ok {
-				featuresMap.VirtualMachineScaleSet.ForceDelete = v.(bool)
-			}
-			if v, ok := scaleSetRaw["scale_to_zero_before_deletion"]; ok {
-				featuresMap.VirtualMachineScaleSet.ScaleToZeroOnDelete = v.(bool)
-			}
-		}
-	}
-
 	if raw, ok := val["resource_group"]; ok {
 		items := raw.([]interface{})
 		if len(items) > 0 {
 			resourceGroupRaw := items[0].(map[string]interface{})
 			if v, ok := resourceGroupRaw["prevent_deletion_if_contains_resources"]; ok {
 				featuresMap.ResourceGroup.PreventDeletionIfContainsResources = v.(bool)
-			}
-		}
-	}
-
-	if raw, ok := val["managed_disk"]; ok {
-		items := raw.([]interface{})
-		if len(items) > 0 {
-			managedDiskRaw := items[0].(map[string]interface{})
-			if v, ok := managedDiskRaw["expand_without_downtime"]; ok {
-				featuresMap.ManagedDisk.ExpandWithoutDowntime = v.(bool)
 			}
 		}
 	}

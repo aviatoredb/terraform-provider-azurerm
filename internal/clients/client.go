@@ -48,6 +48,7 @@ func (client *Client) Build(ctx context.Context, o *common.ClientOptions) error 
 	client.ManagementGroups = managementgroup.NewClient(o)
 	client.Network = network.NewClient(o)
 	client.Storage = storage.NewClient(o)
+	client.Resource = resource.NewClient(o)
 
 	return nil
 }

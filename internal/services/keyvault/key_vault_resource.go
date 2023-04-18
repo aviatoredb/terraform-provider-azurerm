@@ -37,7 +37,7 @@ import (
 // https://github.com/Azure/azure-rest-api-specs/blob/master/arm-keyvault/2015-06-01/swagger/keyvault.json#L239
 var armKeyVaultSkuFamily = "A"
 
-var keyVaultResourceName = "azurerm_key_vault"
+var keyVaultResourceName = "customkv_key_vault"
 
 func resourceKeyVault() *pluginsdk.Resource {
 	return &pluginsdk.Resource{
@@ -262,7 +262,7 @@ func resourceKeyVaultCreate(d *pluginsdk.ResourceData, meta interface{}) error {
 	}
 
 	if !utils.ResponseWasNotFound(existing.Response) {
-		return tf.ImportAsExistsError("azurerm_key_vault", id.ID())
+		return tf.ImportAsExistsError("customkv_key_vault", id.ID())
 	}
 
 	// before creating check to see if the key vault exists in the soft delete state
